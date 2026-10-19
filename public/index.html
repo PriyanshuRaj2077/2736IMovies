@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iMovies — Online Movie Ticket Booking Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-logo" id="nav-brand">
+        <span class="logo-icon">🎬</span>
+        <span class="logo-text">i<span class="logo-highlight">Movies</span></span>
+      </div>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="global-search-input" placeholder="Search movies, languages, theatres...">
+      </div>
+
+      <nav class="nav-links">
+        <a href="#movies" class="nav-link active">Movies</a>
+        <a href="#theatres" class="nav-link" id="nav-theatres-link">Cinemas</a>
+        <button class="nav-chip-btn" id="btn-my-bookings">
+          <span>Tickets</span>
+          <span class="chip-count" id="bookings-count-badge">1</span>
+        </button>
+        <button class="nav-chip-btn" id="btn-favorites">
+          <span>Watchlist</span>
+        </button>
+        <button class="nav-chip-btn chip-admin" id="btn-admin-portal">
+          <span>Admin</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Clean Editorial Hero Card Container -->
+  <section class="hero-section" id="hero-banner">
+    <div class="hero-card-container">
+      <div class="hero-poster-box">
+        <img id="hero-poster-img" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" alt="Featured Movie" class="hero-poster">
+      </div>
+      <div class="hero-details">
+        <div class="hero-pill-group">
+          <span class="tag-chip">Trending Now</span>
+          <span class="tag-chip cert-chip" id="hero-cert">UA</span>
+          <span class="tag-chip rating-chip" id="hero-rating">⭐ 4.8</span>
+        </div>
+        <h1 class="hero-title" id="hero-title">Dune: Part Two</h1>
+        <p class="hero-meta" id="hero-meta">2h 46m • Sci-Fi, Adventure, Drama • English, Hindi</p>
+        <p class="hero-synopsis" id="hero-synopsis">
+          Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="btn-hero-book">Book Tickets</button>
+          <button class="btn btn-secondary" id="btn-hero-trailer">Watch Trailer</button>
+          <button class="btn btn-chip" id="btn-hero-fav" title="Save to Watchlist">❤️ Save</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="main-container">
+    <!-- Section Bar with City & Search Guidance -->
+    <div class="content-toolbar">
+      <div class="toolbar-title-group">
+        <h2 class="section-title">Now Showing</h2>
+        <span class="toolbar-subtitle">Select movie to browse cinema showtimes and seat availability</span>
+      </div>
+      <div class="city-selector-chip">
+        <span class="city-label">Location:</span>
+        <select id="city-dropdown" class="city-dropdown">
+          <option value="Metro City">Metro City (All Theatres)</option>
+          <option value="Downtown">Downtown Central</option>
+          <option value="West End">West End Galleria</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Quick Filter Chips -->
+    <div class="chip-scroll-group" id="genre-tabs-container">
+      <button class="filter-chip active" data-genre="All">All Films</button>
+      <button class="filter-chip" data-genre="Sci-Fi">Sci-Fi</button>
+      <button class="filter-chip" data-genre="Action">Action</button>
+      <button class="filter-chip" data-genre="Drama">Drama</button>
+      <button class="filter-chip" data-genre="Adventure">Adventure</button>
+      <button class="filter-chip" data-genre="Animation">Animation</button>
+      <button class="filter-chip" data-genre="Crime">Crime / Thriller</button>
+    </div>
+
+    <!-- Movies Grid -->
+    <section class="movies-grid" id="movies-grid">
+      <!-- Injected via JavaScript -->
+    </section>
+
+    <!-- Partner Theatres Section -->
+    <div class="content-toolbar" style="margin-top: 48px;">
+      <div class="toolbar-title-group">
+        <h2 class="section-title" id="theatres">Cinema Venues</h2>
+        <span class="toolbar-subtitle">Partner theatres with Dolby Atmos and 4K Projection</span>
+      </div>
+    </div>
+    <section class="theatres-grid" id="theatres-grid">
+      <!-- Injected via JavaScript -->
+    </section>
+  </main>
+
+  <!-- Modal: Movie Details & Showtime Selection -->
+  <div class="modal-backdrop" id="movie-details-modal">
+    <div class="modal-dialog modal-large">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-movie-title">Movie Details</h3>
+        <button class="modal-close" id="btn-close-details">&times;</button>
+      </div>
+      <div class="modal-body" id="movie-details-content">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Interactive Cinema Hall Seat Selector -->
+  <div class="modal-backdrop" id="seat-booking-modal">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="seat-modal-header">
+        <div>
+          <h2 id="seat-modal-movie-title" class="seat-title">Dune: Part Two</h2>
+          <p id="seat-modal-theatre-info" class="seat-subinfo">PVR IMAX Metropolis • Today, 10:30 AM</p>
+        </div>
+        <button class="modal-close" id="btn-close-seats">&times;</button>
+      </div>
+
+      <div class="seat-modal-body">
+        <!-- Minimal Utilitarian Screen Label -->
+        <div class="screen-bar-container">
+          <div class="screen-flat-bar"></div>
+          <p class="screen-label">SCREEN THIS WAY</p>
+        </div>
+
+        <!-- Seat Legend Chips -->
+        <div class="seat-legend">
+          <div class="legend-item">
+            <span class="seat-sample seat-available"></span>
+            <span>Available</span>
+          </div>
+          <div class="legend-item">
+            <span class="seat-sample seat-selected"></span>
+            <span>Selected</span>
+          </div>
+          <div class="legend-item">
+            <span class="seat-sample seat-booked"></span>
+            <span>Booked</span>
+          </div>
+        </div>
+
+        <!-- Tiered Seat Layout Grid -->
+        <div class="cinema-hall-grid" id="cinema-hall-grid">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+
+      <!-- Live Checkout Summary Bar -->
+      <div class="seat-checkout-bar">
+        <div class="checkout-details">
+          <div class="checkout-stat">
+            <span class="stat-label">Selected Seats:</span>
+            <span class="stat-value" id="selected-seats-display">None</span>
+          </div>
+          <div class="checkout-stat">
+            <span class="stat-label">Total Payable:</span>
+            <span class="stat-value total-highlight" id="checkout-total-price">₹0.00</span>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-confirm-booking" disabled>
+          Proceed to Book
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Digital Ticket Receipt -->
+  <div class="modal-backdrop" id="ticket-modal">
+    <div class="modal-dialog modal-medium">
+      <div class="modal-header">
+        <h3 class="modal-title">Booking Confirmation</h3>
+        <button class="modal-close" id="btn-close-ticket">&times;</button>
+      </div>
+      <div class="ticket-slip" id="ticket-slip-content">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer / Modal: My Bookings -->
+  <div class="modal-backdrop" id="my-bookings-modal">
+    <div class="modal-dialog modal-medium">
+      <div class="modal-header">
+        <h3 class="modal-title">My Booked Tickets</h3>
+        <button class="modal-close" id="btn-close-bookings">&times;</button>
+      </div>
+      <div class="bookings-list" id="my-bookings-list">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer / Modal: Favorites -->
+  <div class="modal-backdrop" id="favorites-modal">
+    <div class="modal-dialog modal-medium">
+      <div class="modal-header">
+        <h3 class="modal-title">Saved Watchlist</h3>
+        <button class="modal-close" id="btn-close-favorites">&times;</button>
+      </div>
+      <div class="favorites-grid" id="favorites-grid-content">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Admin Management Portal -->
+  <div class="modal-backdrop" id="admin-modal">
+    <div class="modal-dialog modal-large">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">⚡ iMovies Admin Portal</h3>
+          <p class="modal-subtitle">Platform KPI metrics, show scheduling & booking audit</p>
+        </div>
+        <button class="modal-close" id="btn-close-admin">&times;</button>
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="tab-overview">Overview</button>
+        <button class="admin-tab-btn" data-tab="tab-add-movie">Add Movie</button>
+        <button class="admin-tab-btn" data-tab="tab-schedule-show">Schedule Show</button>
+        <button class="admin-tab-btn" data-tab="tab-audit-bookings">Bookings Audit</button>
+      </div>
+
+      <!-- Tab Content: KPIs -->
+      <div class="admin-tab-pane active" id="tab-overview">
+        <div class="kpi-grid" id="admin-kpi-grid">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- Tab Content: Add Movie -->
+      <div class="admin-tab-pane" id="tab-add-movie">
+        <form class="admin-form" id="form-add-movie">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Movie Title *</label>
+              <input type="text" id="admin-movie-title" placeholder="e.g. Gladiator II" required>
+            </div>
+            <div class="form-group">
+              <label>Certification *</label>
+              <select id="admin-movie-cert">
+                <option value="UA">UA (Parental Guidance)</option>
+                <option value="A">A (Adults Only)</option>
+                <option value="U">U (Universal)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Genre(s) *</label>
+              <input type="text" id="admin-movie-genre" placeholder="e.g. Action, Drama" required>
+            </div>
+            <div class="form-group">
+              <label>Runtime (Minutes) *</label>
+              <input type="number" id="admin-movie-runtime" value="145" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Poster Image URL</label>
+            <input type="url" id="admin-movie-poster" placeholder="https://images.unsplash.com/...">
+          </div>
+          <div class="form-group">
+            <label>Synopsis / Description *</label>
+            <textarea id="admin-movie-desc" rows="3" placeholder="Enter movie storyline..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Publish Movie</button>
+        </form>
+      </div>
+
+      <!-- Tab Content: Schedule Show -->
+      <div class="admin-tab-pane" id="tab-schedule-show">
+        <form class="admin-form" id="form-schedule-show">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Select Movie *</label>
+              <select id="admin-show-movie" required></select>
+            </div>
+            <div class="form-group">
+              <label>Select Theatre Hall *</label>
+              <select id="admin-show-theatre" required></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Show Date *</label>
+              <input type="date" id="admin-show-date" required>
+            </div>
+            <div class="form-group">
+              <label>Show Time *</label>
+              <select id="admin-show-time" required>
+                <option value="10:00 AM">10:00 AM (Morning)</option>
+                <option value="01:30 PM">01:30 PM (Matinee)</option>
+                <option value="05:00 PM">05:00 PM (Evening)</option>
+                <option value="08:30 PM">08:30 PM (Prime)</option>
+                <option value="11:15 PM">11:15 PM (Late Night)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Schedule Show</button>
+        </form>
+      </div>
+
+      <!-- Tab Content: All Bookings Audit -->
+      <div class="admin-tab-pane" id="tab-audit-bookings">
+        <div class="table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Booking Ref</th>
+                <th>Customer</th>
+                <th>Movie</th>
+                <th>Theatre</th>
+                <th>Show Date</th>
+                <th>Seats</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="admin-bookings-table-body">
+              <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-text">🎬 i<span class="logo-highlight">Movies</span></span>
+        <p class="footer-desc">iMovies — Online Movie Ticket Booking Platform with real-time showtimes, seat selection, and zero double-booking architecture.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <a href="#movies" class="footer-link">Now Showing</a>
+          <a href="#theatres" class="footer-link">Cinema Venues</a>
+        </div>
+        <div>
+          <h4 class="footer-heading">Documentation</h4>
+          <a href="/docs/iMovies_Project_Plan.html" target="_blank" class="footer-link">Project Plan (HTML)</a>
+          <a href="/docs/iMovies_Project_Plan.pdf" target="_blank" class="footer-link">Project Plan (PDF)</a>
+          <a href="/docs/iMovies_Evaluation_Checklist.md" target="_blank" class="footer-link">Evaluation Checklist</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 iMovies — Online Movie Ticket Booking Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iMovies Master Project Plan</title>
+    <style>
+
+@page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cover Page */
+.cover-page {
+    page-break-after: always;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.cover-badge {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11pt;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.cover-title {
+    font-size: 32pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 16px 0;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.cover-subtitle {
+    font-size: 14pt;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 0 40px 0;
+    line-height: 1.5;
+}
+
+.cover-meta-table {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cover-meta-table td {
+    padding: 10px 16px;
+    font-size: 9.5pt;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+}
+
+.cover-meta-table td:first-child {
+    font-weight: 600;
+    color: #cbd5e1;
+    width: 35%;
+}
+
+.cover-meta-table td:last-child {
+    color: #f8fafc;
+}
+
+/* Headings */
+h1 {
+    font-size: 20pt;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+h2 {
+    font-size: 14pt;
+    color: #1e293b;
+    border-left: 4px solid #f59e0b;
+    padding-left: 10px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+h3 {
+    font-size: 11pt;
+    color: #334155;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+th, td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8fafc;
+}
+
+/* Code Blocks & Inlines */
+pre {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8pt;
+    line-height: 1.45;
+    overflow-x: auto;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: 14px 0;
+    border: 1px solid #1e293b;
+}
+
+code {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8.5pt;
+    background-color: #f1f5f9;
+    color: #b45309;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+pre code {
+    background-color: transparent;
+    color: #f8fafc;
+    padding: 0;
+}
+
+/* Blockquotes & Lists */
+blockquote {
+    border-left: 4px solid #3b82f6;
+    background-color: #eff6ff;
+    padding: 10px 16px;
+    margin: 16px 0;
+    color: #1e3a8a;
+    border-radius: 0 6px 6px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+ul, ol {
+    margin: 8px 0 16px 20px;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 28px 0;
+}
+
+.page-break {
+    page-break-before: always;
+    break-before: always;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="cover-page">
+    <div class="cover-badge">Enterprise Engineering Blueprint</div>
+    <div class="cover-title">iMovies — Online Movie Ticket Booking Platform</div>
+    <div class="cover-subtitle">Comprehensive Project Audit, Architecture Specification, Phased Implementation Roadmap & Quality Evaluation Document</div>
+    
+    <table class="cover-meta-table">
+        <tr>
+            <td>Project Name</td>
+            <td>iMovies — Online Movie Ticket Booking Platform</td>
+        </tr>
+        <tr>
+            <td>Target Workspace</td>
+            <td>d:/agent2/MovieTicket</td>
+        </tr>
+        <tr>
+            <td>Document Version</td>
+            <td>1.0.0 (Master Baseline Specification)</td>
+        </tr>
+        <tr>
+            <td>Lead Architect / PM</td>
+            <td>Senior Full-Stack Architect & Technical Project Lead</td>
+        </tr>
+        <tr>
+            <td>Baseline Repository Audit</td>
+            <td>Physical Scan Completed: 0 Files / Greenfield Initialization</td>
+        </tr>
+        <tr>
+            <td>Core Technology Stack</td>
+            <td>Node.js, Express.js, MongoDB, Mongoose, React, Vite, JWT, Vanilla CSS</td>
+        </tr>
+        <tr>
+            <td>Approval Status</td>
+            <td>Approved for Implementation & Evaluation</td>
+        </tr>
+        <tr>
+            <td>Publication Date</td>
+            <td>October 19, 2026</td>
+        </tr>
+    </table>
+</div>
+
+<div class="document-content">
+<h1 id="imovies-master-project-plan-architecture-specification-implementation-roadmap">iMovies — Master Project Plan, Architecture Specification &amp; Implementation Roadmap</h1>
+<p><strong>Project Name:</strong> iMovies — Online Movie Ticket Booking Platform<br />
+<strong>Target Repository:</strong> <code>d:/agent2/MovieTicket</code><br />
+<strong>Document Version:</strong> 1.0.0 (Master Blueprint)<br />
+<strong>Author / Role:</strong> Senior Full-Stack Architect &amp; Technical Project Lead<br />
+<strong>Creation Date:</strong> 2026-10-19<br />
+<strong>Status:</strong> Approved Architectural Baseline  </p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-executive-summary--role-specification">Executive Summary &amp; Role Specification</a></li>
+<li><a href="#2-project-overview--core-objectives">Project Overview &amp; Core Objectives</a></li>
+<li><a href="#3-technology-stack-rationale--standards">Technology Stack Rationale &amp; Standards</a></li>
+<li><a href="#4-rigorous-codebase-audit--baseline-state-analysis">Rigorous Codebase Audit &amp; Baseline State Analysis</a></li>
+<li><a href="#5-domain-model-er-diagram--schema-architecture">Domain Model, ER Diagram &amp; Schema Architecture</a></li>
+<li><a href="#6-functional-requirements--epic-breakdown">Functional Requirements &amp; Epic Breakdown</a></li>
+<li><a href="#7-complete-rest-api-inventory--contract-specifications">Complete REST API Inventory &amp; Contract Specifications</a></li>
+<li><a href="#8-frontend-architecture--page-by-page-implementation-plan">Frontend Architecture &amp; Page-by-Page Implementation Plan</a></li>
+<li><a href="#9-security-concurrency--data-integrity-strategy">Security, Concurrency &amp; Data Integrity Strategy</a></li>
+<li><a href="#10-comprehensive-testing-strategy--test-matrices">Comprehensive Testing Strategy &amp; Test Matrices</a></li>
+<li><a href="#11-phased-implementation-roadmap--dependency-matrix">Phased Implementation Roadmap &amp; Dependency Matrix</a></li>
+<li><a href="#12-prioritization-scope-control--mvp-definition">Prioritization, Scope Control &amp; MVP Definition</a></li>
+<li><a href="#13-project-evaluation-rubric--quality-assurance-standards">Project Evaluation Rubric &amp; Quality Assurance Standards</a></li>
+<li><a href="#14-comprehensive-risk-register">Comprehensive Risk Register</a></li>
+<li><a href="#15-operational-setup-environment-configuration--repository-hygiene">Operational Setup, Environment Configuration &amp; Repository Hygiene</a></li>
+<li><a href="#16-trackable-task-tracker-checklist">Trackable Task Tracker Checklist</a></li>
+<li><a href="#17-future-enhancements--scalability-roadmap">Future Enhancements &amp; Scalability Roadmap</a></li>
+<li><a href="#18-glossary--architectural-assumptions">Glossary &amp; Architectural Assumptions</a></li>
+</ol>
+<hr />
+<h2 id="1-executive-summary-role-specification">1. Executive Summary &amp; Role Specification</h2>
+<h3 id="11-engineering-mandate">1.1 Engineering Mandate</h3>
+<p>This master plan acts as the definitive technical specification, architectural blueprint, and project roadmap for <strong>iMovies — Online Movie Ticket Booking Platform</strong>. Acting in the capacity of a Senior Full-Stack Software Engineer, Software Architect, Technical Project Manager, and Code Reviewer, this document provides an exhaustive, unambiguous plan for the end-to-end development, verification, security hardening, and academic/enterprise evaluation of the platform.</p>
+<h3 id="12-core-guiding-principles">1.2 Core Guiding Principles</h3>
+<ol>
+<li><strong>Zero Assumption / Evidence-Based Auditing</strong>: No code or component is marked as functional without verified, demonstrable evidence.</li>
+<li><strong>Defensive Architecture</strong>: Security, input validation, role-based authorization, and concurrency protections are designed into the core models rather than retrofitted as afterthoughts.</li>
+<li><strong>Decoupled Modern Monolith</strong>: A modular Express.js backend API architecture coupled with a responsive, high-performance React (Vite) frontend application.</li>
+<li><strong>Actionability</strong>: Every requirement is broken down into discrete, tracked work packages with unique Task IDs, explicit dependencies, measurable acceptance criteria, and effort estimates.</li>
+</ol>
+<hr />
+<h2 id="2-project-overview-core-objectives">2. Project Overview &amp; Core Objectives</h2>
+<h3 id="21-mission-statement">2.1 Mission Statement</h3>
+<p>iMovies is an enterprise-grade web application engineered to streamline the cinema discovery and ticketing lifecycle. It bridges moviegoers with theatre operators, offering frictionless browsing, real-time showtime scheduling, tier-based interactive seat selection, instant reservation management, and authentic community reviews.</p>
+<h3 id="22-key-stakeholders-personas">2.2 Key Stakeholders &amp; Personas</h3>
+<ul>
+<li><strong>The Moviegoer (Customer / User)</strong>: Discovers current and upcoming films, filters by genre and date, selects preferred seating tiers (Lower, Middle, Balcony), completes bookings, receives verifiable tickets, manages favorites, and publishes ratings/reviews.</li>
+<li><strong>The Cinema Administrator (Admin)</strong>: Manages movie master data, configures theatres and hall capacities/pricing, schedules shows with collision detection, monitors booking volume, and moderates user feedback.</li>
+<li><strong>The System Evaluator / Auditor</strong>: Inspects the platform for architectural integrity, database normalization, concurrency safeguards against double-booking, and compliance with industry security standards.</li>
+</ul>
+<hr />
+<h2 id="3-technology-stack-rationale-standards">3. Technology Stack Rationale &amp; Standards</h2>
+<h3 id="31-backend-architecture">3.1 Backend Architecture</h3>
+<ul>
+<li><strong>Runtime Environment</strong>: Node.js (v18.x / v20.x LTS) — Asynchronous event-driven I/O optimized for concurrent HTTP requests.</li>
+<li><strong>Web Framework</strong>: Express.js (v4.19+) — Minimalist, robust routing and middleware pipeline.</li>
+<li><strong>Database Engine</strong>: MongoDB (v6.0+) — Document-oriented database providing schema flexibility combined with JSON-native query structures.</li>
+<li><strong>Object Data Modeling (ODM)</strong>: Mongoose (v8.x) — Schema validation, relationship population, compound indexing, and lifecycle hooks.</li>
+<li><strong>Authentication &amp; Cryptography</strong>:</li>
+<li><code>jsonwebtoken</code> (v9.x): Stateless JWT generation with HS256 cryptographic signing and explicit expiration.</li>
+<li><code>bcryptjs</code> (v2.4.3): Adaptive one-way salted password hashing (work factor / salt rounds &gt;= 10).</li>
+<li><strong>Validation &amp; Security</strong>:</li>
+<li><code>express-validator</code>: Declarative request payload validation and sanitization.</li>
+<li><code>cors</code>: Explicit origin-whitelisted Cross-Origin Resource Sharing.</li>
+<li><code>helmet</code>: HTTP header hardening.</li>
+<li><code>express-rate-limit</code>: Brute-force and DDoS mitigation on sensitive authentication endpoints.</li>
+</ul>
+<h3 id="32-frontend-architecture">3.2 Frontend Architecture</h3>
+<ul>
+<li><strong>Framework &amp; Build Tool</strong>: React.js (v18.3+) with Vite (v5.x) — Instant Hot Module Replacement (HMR) and optimized Rollup production bundling.</li>
+<li><strong>Client Routing</strong>: React Router DOM (v6.x) — Declarative nested routing, layout wrappers, and protected route guards.</li>
+<li><strong>HTTP Client</strong>: Axios (v1.7+) — Unified instance with request/response interceptors for automatic JWT injection and centralized 401 handling.</li>
+<li><strong>UI &amp; Styling</strong>: Pure Vanilla Modern CSS — Custom CSS design tokens (variables), glassmorphic dark-theme aesthetics, responsive grid layouts, and zero heavy external component library lock-in.</li>
+<li><strong>Iconography</strong>: Lucide React — Lightweight tree-shakable SVG icons.</li>
+</ul>
+<h3 id="33-port-allocations-network-topology">3.3 Port Allocations &amp; Network Topology</h3>
+<ul>
+<li><strong>Backend API Service</strong>: <code>http://localhost:5000</code> (Reverse-proxied in production or configured via CORS)</li>
+<li><strong>Frontend Development Server</strong>: <code>http://localhost:5173</code></li>
+<li><strong>Database Instance</strong>: <code>mongodb://localhost:27017/imovies_db</code> (or MongoDB Atlas URI)</li>
+</ul>
+<hr />
+<h2 id="4-rigorous-codebase-audit-baseline-state-analysis">4. Rigorous Codebase Audit &amp; Baseline State Analysis</h2>
+<h3 id="41-repository-physical-inspection">4.1 Repository Physical Inspection</h3>
+<p>An inspection of the workspace path <code>d:\agent2\MovieTicket</code> was executed.</p>
+<pre><code>[AUDIT LOG: PHYSICAL REPOSITORY SCAN]
+Target Path: d:\agent2\MovieTicket
+Items Discovered on Disk: 0 files, 0 folders (prior to /docs initialization)
+Neighboring Directory Scan: d:\agent2\* searched for references to iMovies/MovieTicket
+Findings: No active source code, models, routes, or configuration files exist in the workspace.
+</code></pre>
+<h3 id="42-audit-classification-matrix">4.2 Audit Classification Matrix</h3>
+<p>To satisfy the audit requirements with zero fabrication, every component referenced in the initial project brief has been audited against real disk evidence:</p>
+<table>
+<thead>
+<tr>
+<th>Expected Component</th>
+<th>Referenced File Path</th>
+<th style="text-align: center;">Real Status on Disk</th>
+<th>Architectural &amp; Security Findings</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Package Manifest</strong></td>
+<td><code>backend/package.json</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>No dependency manifests or scripts present.</td>
+<td>Initialize clean Node.js package with locked dependencies.</td>
+</tr>
+<tr>
+<td><strong>Server Entry Point</strong></td>
+<td><code>backend/server.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>No Express instance, DB connector, or middleware pipeline exists.</td>
+<td>Create modular <code>server.js</code> with graceful shutdown and error middleware.</td>
+</tr>
+<tr>
+<td><strong>Authentication Middleware</strong></td>
+<td><code>backend/middlewares/fetchUser.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Referenced in notes, but missing. Initial design conflated auth and role checks.</td>
+<td>Implement separate <code>authenticateUser</code> and <code>authorizeRole('admin')</code> middlewares.</td>
+</tr>
+<tr>
+<td><strong>User Model</strong></td>
+<td><code>backend/models/userModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created.</td>
+<td>Define Mongoose schema with email uniqueness, lowercase trimming, and password hashing hooks.</td>
+</tr>
+<tr>
+<td><strong>Admin Model</strong></td>
+<td><code>backend/models/adminModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Architectural anti-pattern: Separate admin model causes duplicate auth logic and schema redundancy.</td>
+<td>Unify into <code>userModel.js</code> with <code>role: { type: String, enum: ['user', 'admin'], default: 'user' }</code>.</td>
+</tr>
+<tr>
+<td><strong>Movie Model</strong></td>
+<td><code>backend/models/movieModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created.</td>
+<td>Define Movie schema with certification enums, runtime, media URLs, and text indexes.</td>
+</tr>
+<tr>
+<td><strong>Theatre Model</strong></td>
+<td><code>backend/models/theatreModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created. ER diagram notes string admin name.</td>
+<td>Define Theatre schema using <code>ObjectId</code> reference to Admin, plus tier seat capacities.</td>
+</tr>
+<tr>
+<td><strong>Show Model</strong></td>
+<td><code>backend/models/showModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created.</td>
+<td>Define Show schema with compound index (<code>theatre + date + time</code>), movie reference, and booked seats array.</td>
+</tr>
+<tr>
+<td><strong>Booking Model</strong></td>
+<td><code>backend/models/bookingModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created.</td>
+<td>Define Booking schema with atomic status, ticket details, UUID reference, and user/show references.</td>
+</tr>
+<tr>
+<td><strong>Favorite Model</strong></td>
+<td><code>backend/models/favoriteModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created.</td>
+<td>Define Favorite schema with unique compound index on <code>(user, movie)</code> to prevent duplicates.</td>
+</tr>
+<tr>
+<td><strong>Review Model</strong></td>
+<td><code>backend/models/reviewModel.js</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Entity not created.</td>
+<td>Define Review schema with unique compound index <code>(user, movie)</code> and rating bounds [1, 5].</td>
+</tr>
+<tr>
+<td><strong>Route Modules</strong></td>
+<td><code>backend/routes/*.js</code> (8 files)</td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>Zero route files present.</td>
+<td>Implement clean REST controllers using Express Router with validator middlewares.</td>
+</tr>
+<tr>
+<td><strong>Frontend Application</strong></td>
+<td><code>frontend/*</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>No client application found.</td>
+<td>Scaffold clean React + Vite application with responsive CSS design tokens.</td>
+</tr>
+<tr>
+<td><strong>Automated Tests</strong></td>
+<td><code>backend/tests/*</code></td>
+<td style="text-align: center;"><strong>Not implemented</strong></td>
+<td>No unit or integration tests exist.</td>
+<td>Configure Jest, Supertest, and MongoMemoryServer for automated CI/CD validation.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-domain-model-er-diagram-schema-architecture">5. Domain Model, ER Diagram &amp; Schema Architecture</h2>
+<h3 id="51-analysis-of-original-er-diagram-vs-recommended-mongoose-modeling">5.1 Analysis of Original ER Diagram vs Recommended Mongoose Modeling</h3>
+<p>The initial domain model features seven primary entities: User, Admin, Movie, Theatre, Show, Booking, and Favorite. A rigorous architectural review reveals critical areas requiring modernization and structural enhancement:</p>
+<ol>
+<li><strong>User vs Admin Entity Segregation</strong>:</li>
+<li><em>Original Diagram</em>: Separate <code>User</code> and <code>Admin</code> entities with identical attributes (<code>Username</code>, <code>Email</code>, <code>Password</code>).</li>
+<li><em>Architectural Recommendation</em>: <strong>Unify into a single <code>User</code> model with a <code>role</code> discriminator (<code>'user' | 'admin'</code>)</strong>. Maintaining separate tables causes duplicate authentication logic, split JWT validation paths, and redundant token middleware.</li>
+<li><strong>Entity Reference Types (Strings vs ObjectIds)</strong>:</li>
+<li><em>Original Diagram</em>: Theatre references Admin via string name; Show references Theatre via string name; Booking references User via email string.</li>
+<li><em>Architectural Recommendation</em>: <strong>Replace all loose string references with canonical MongoDB <code>Schema.Types.ObjectId</code> references with <code>ref</code> declarations</strong>. String references break referential integrity if a user changes their email or a theatre is renamed.</li>
+<li><strong>Seat Availability &amp; Capacity Modeling</strong>:</li>
+<li><em>Original Diagram</em>: Theatre defines <code>lower-seat count</code>, <code>middle-seat count</code>, and <code>balcony-seat count</code> with seat prices.</li>
+<li><em>Architectural Recommendation</em>:<ul>
+<li><strong>Theatre Model</strong>: Defines hall layout, tier capacities (<code>lowerCount</code>, <code>middleCount</code>, <code>balconyCount</code>), and base tier prices.</li>
+<li><strong>Show Model</strong>: Overrides base prices if required and maintains an atomic array of <code>bookedSeats: [String]</code> (e.g. <code>['L-1', 'L-2', 'M-12']</code>).</li>
+<li><strong>Booking Model</strong>: Records the exact seats booked, tier breakdown, total amount paid, and booking reference UUID.</li>
+</ul>
+</li>
+<li><strong>Uniqueness &amp; Referential Constraints</strong>:</li>
+<li>Compound unique index on <code>Favorite</code>: <code>{ user: 1, movie: 1 }</code> (A user can only favorite a movie once).</li>
+<li>Compound unique index on <code>Review</code>: <code>{ user: 1, movie: 1 }</code> (A user can only review a movie once; updates allowed via PUT).</li>
+<li>Compound scheduling index on <code>Show</code>: <code>{ theatre: 1, showDate: 1, showTime: 1 }</code> to prevent overlapping hall reservations.</li>
+</ol>
+<h3 id="52-mongoose-schema-definitions-architectural-blueprint">5.2 Mongoose Schema Definitions (Architectural Blueprint)</h3>
+<pre><code class="language-javascript">// ==========================================
+// 1. USER SCHEMA (Unified with RBAC)
+// ==========================================
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, trim: true, minlength: 3, maxlength: 50 },
+  email: { type: String, required: true, unique: true, lowercase: true, trim: true, match: [/^\S+@\S+\.\S+$/, 'Invalid email'] },
+  password: { type: String, required: true, minlength: 8 },
+  role: { type: String, enum: ['user', 'admin'], default: 'user', index: true }
+}, { timestamps: true });
+
+// ==========================================
+// 2. MOVIE SCHEMA
+// ==========================================
+const movieSchema = new mongoose.Schema({
+  title: { type: String, required: true, trim: true, index: 'text' },
+  description: { type: String, required: true },
+  genre: [{ type: String, required: true, trim: true }],
+  certification: { type: String, enum: ['U', 'UA', 'A', 'R'], required: true },
+  runtimeMinutes: { type: Number, required: true, min: 1 },
+  releaseDate: { type: Date, required: true },
+  posterUrl: { type: String, required: true },
+  backdropUrl: { type: String },
+  trailerUrl: { type: String },
+  averageRating: { type: Number, default: 0, min: 0, max: 5 },
+  reviewCount: { type: Number, default: 0 }
+}, { timestamps: true });
+
+// ==========================================
+// 3. THEATRE SCHEMA
+// ==========================================
+const theatreSchema = new mongoose.Schema({
+  name: { type: String, required: true, trim: true },
+  location: { type: String, required: true, trim: true },
+  city: { type: String, required: true, trim: true, index: true },
+  admin: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  seatingCapacity: {
+    lower: { count: { type: Number, required: true, min: 1 }, defaultPrice: { type: Number, required: true, min: 0 } },
+    middle: { count: { type: Number, required: true, min: 1 }, defaultPrice: { type: Number, required: true, min: 0 } },
+    balcony: { count: { type: Number, required: true, min: 1 }, defaultPrice: { type: Number, required: true, min: 0 } }
+  }
+}, { timestamps: true });
+
+// ==========================================
+// 4. SHOW SCHEMA
+// ==========================================
+const showSchema = new mongoose.Schema({
+  movie: { type: mongoose.Schema.Types.ObjectId, ref: 'Movie', required: true, index: true },
+  theatre: { type: mongoose.Schema.Types.ObjectId, ref: 'Theatre', required: true, index: true },
+  showDate: { type: String, required: true, index: true }, // Format: YYYY-MM-DD
+  showTime: { type: String, required: true },               // Format: HH:mm
+  pricing: {
+    lower: { type: Number, required: true, min: 0 },
+    middle: { type: Number, required: true, min: 0 },
+    balcony: { type: Number, required: true, min: 0 }
+  },
+  bookedSeats: [{ type: String }], // Array of seat IDs, e.g., ['L-1', 'M-5', 'B-10']
+  totalCapacity: { type: Number, required: true }
+}, { timestamps: true });
+
+showSchema.index({ theatre: 1, showDate: 1, showTime: 1 }, { unique: true });
+
+// ==========================================
+// 5. BOOKING SCHEMA
+// ==========================================
+const bookingSchema = new mongoose.Schema({
+  bookingReference: { type: String, required: true, unique: true, index: true }, // UUID or alphanumeric
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true },
+  show: { type: mongoose.Schema.Types.ObjectId, ref: 'Show', required: true, index: true },
+  seats: [{
+    seatNumber: { type: String, required: true },
+    tier: { type: String, enum: ['lower', 'middle', 'balcony'], required: true },
+    price: { type: Number, required: true, min: 0 }
+  }],
+  totalAmount: { type: Number, required: true, min: 0 },
+  status: { type: String, enum: ['CONFIRMED', 'CANCELLED'], default: 'CONFIRMED', index: true },
+  bookingDate: { type: Date, default: Date.now }
+}, { timestamps: true });
+
+// ==========================================
+// 6. FAVORITE SCHEMA
+// ==========================================
+const favoriteSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  movie: { type: mongoose.Schema.Types.ObjectId, ref: 'Movie', required: true }
+}, { timestamps: true });
+
+favoriteSchema.index({ user: 1, movie: 1 }, { unique: true });
+
+// ==========================================
+// 7. REVIEW SCHEMA
+// ==========================================
+const reviewSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  movie: { type: mongoose.Schema.Types.ObjectId, ref: 'Movie', required: true, index: true },
+  rating: { type: Number, required: true, min: 1, max: 5 },
+  comment: { type: String, required: true, trim: true, maxlength: 1000 }
+}, { timestamps: true });
+
+reviewSchema.index({ user: 1, movie: 1 }, { unique: true });
+</code></pre>
+<hr />
+<h2 id="6-functional-requirements-epic-breakdown">6. Functional Requirements &amp; Epic Breakdown</h2>
+<h3 id="epic-1-authentication-authorization-identity-management">Epic 1: Authentication, Authorization &amp; Identity Management</h3>
+<ul>
+<li><strong>User Self-Registration</strong>: Public endpoint permitting new customers to create an account with username, email, and strong password. Password hashed with bcrypt before persistence.</li>
+<li><strong>Unified Login Service</strong>: Generates signed JWT containing <code>userId</code> and <code>role</code>. Strips password hash from all JSON output.</li>
+<li><strong>Middleware Layer</strong>:</li>
+<li><code>fetchUser</code>: Verifies Authorization header <code>Bearer &lt;token&gt;</code>, validates expiration, attaches <code>req.user</code>.</li>
+<li><code>authorizeRole(roles)</code>: Enforces role checks (<code>'admin'</code>), rejecting non-authorized users with HTTP 403 Forbidden.</li>
+<li><strong>Profile Management</strong>: Authenticated users can retrieve and update their personal profile.</li>
+</ul>
+<h3 id="epic-2-movies-cinema-discovery">Epic 2: Movies &amp; Cinema Discovery</h3>
+<ul>
+<li><strong>Public Movie Catalog</strong>: Displays currently screening and upcoming movies with high-resolution poster media, certification badges, runtime, and genre tags.</li>
+<li><strong>Search &amp; Filtering Engine</strong>: Text search on title/description and multi-genre filtering with pagination support (<code>page</code>, <code>limit</code>).</li>
+<li><strong>Movie Details View</strong>: In-depth view featuring movie synopsis, runtime, certification, trailer link, community rating, and active show schedules.</li>
+<li><strong>Admin Movie Management</strong>: Protected administrative endpoints to create, update, or soft-delete films.</li>
+</ul>
+<h3 id="epic-3-theatre-show-schedule-management">Epic 3: Theatre &amp; Show Schedule Management</h3>
+<ul>
+<li><strong>Theatre Infrastructure Configuration</strong>: Admins register theatre locations, hall details, and tier seating capacities (Lower, Middle, Balcony).</li>
+<li><strong>Show Scheduling Engine</strong>: Connects a Movie, Theatre, Date, and Time. Implements conflict validation to prevent double-booking a theatre hall during overlapping timeslots.</li>
+<li><strong>Showtime Discovery</strong>: Query shows by <code>movieId</code> and <code>date</code>, grouped cleanly by theatre with remaining seat tallies.</li>
+</ul>
+<h3 id="epic-4-interactive-seat-availability-atomic-booking">Epic 4: Interactive Seat Availability &amp; Atomic Booking</h3>
+<ul>
+<li><strong>Visual Tiered Seat Map</strong>: Visualizes the hall layout partitioned into Lower, Middle, and Balcony tiers, dynamically displaying booked versus available seats.</li>
+<li><strong>Atomic Reservation &amp; Double-Booking Prevention</strong>: Executes atomic reservation using MongoDB conditional queries (<code>$nin</code> on <code>bookedSeats</code> array) to guarantee zero double-booking even under extreme concurrent requests.</li>
+<li><strong>Ticket Generation</strong>: Issues an immutable booking confirmation with reference code, seat identifiers, showtime, and total price.</li>
+<li><strong>Customer Booking History &amp; Cancellation</strong>: View active and historical bookings with ticket print view and pre-show cancellation options.</li>
+</ul>
+<h3 id="epic-5-favorites-movie-reviews">Epic 5: Favorites &amp; Movie Reviews</h3>
+<ul>
+<li><strong>User Watchlist / Favorites</strong>: Allows logged-in users to toggle films into their personal favorites list with instant UI reflection.</li>
+<li><strong>Community Ratings &amp; Reviews</strong>: Enables customers to post verified star ratings (1 to 5) and textual reviews. Enforces single review per user per movie with recalculation of movie <code>averageRating</code>.</li>
+</ul>
+<h3 id="epic-6-administration-reporting-platform-operations">Epic 6: Administration, Reporting &amp; Platform Operations</h3>
+<ul>
+<li><strong>Administrator Dashboard</strong>: Aggregated operational metrics: total registered users, active shows, tickets sold, and revenue breakdown.</li>
+<li><strong>Schedule &amp; Ticket Oversight</strong>: Admins can audit all platform bookings, filter by date/theatre, and manage scheduling exceptions.</li>
+</ul>
+<hr />
+<h2 id="7-complete-rest-api-inventory-contract-specifications">7. Complete REST API Inventory &amp; Contract Specifications</h2>
+<h3 id="71-unified-api-response-standard">7.1 Unified API Response Standard</h3>
+<p>All backend endpoints strictly adhere to a standardized JSON response envelope:</p>
+<pre><code class="language-json">// Success Response (HTTP 200 / 201)
+{
+  &quot;success&quot;: true,
+  &quot;message&quot;: &quot;Operation completed successfully.&quot;,
+  &quot;data&quot;: { ... }
+}
+
+// Error Response (HTTP 400 / 401 / 403 / 404 / 409 / 500)
+{
+  &quot;success&quot;: false,
+  &quot;message&quot;: &quot;Detailed human-readable error description.&quot;,
+  &quot;error&quot;: {
+    &quot;code&quot;: &quot;ERROR_CODE_IDENTIFIER&quot;,
+    &quot;details&quot;: [ ... ]
+  }
+}
+</code></pre>
+<h3 id="72-detailed-api-endpoint-inventory">7.2 Detailed API Endpoint Inventory</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint Route</th>
+<th style="text-align: center;">HTTP</th>
+<th>Purpose</th>
+<th style="text-align: center;">Auth</th>
+<th style="text-align: center;">Role</th>
+<th>Request Body / Params</th>
+<th>Expected Responses</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/auth/register</code></td>
+<td style="text-align: center;">POST</td>
+<td>Register new customer</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td><code>{ username, email, password }</code></td>
+<td>201 (Created), 400 (Validation), 409 (Email Exists)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/auth/login</code></td>
+<td style="text-align: center;">POST</td>
+<td>Authenticate user</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td><code>{ email, password }</code></td>
+<td>200 (JWT + user object), 400 (Bad input), 401 (Invalid creds)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/auth/profile</code></td>
+<td style="text-align: center;">GET</td>
+<td>Fetch active profile</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User/Admin</td>
+<td>None</td>
+<td>200 (User details sans password), 401 (Unauthorized)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/auth/profile</code></td>
+<td style="text-align: center;">PUT</td>
+<td>Update user profile</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User/Admin</td>
+<td><code>{ username }</code></td>
+<td>200 (Updated user), 400 (Validation), 401 (Unauthorized)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/movies</code></td>
+<td style="text-align: center;">GET</td>
+<td>List &amp; search movies</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Query: <code>?genre=&amp;search=&amp;page=&amp;limit=</code></td>
+<td>200 (Paginated list of movies, total, pages)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/movies/:id</code></td>
+<td style="text-align: center;">GET</td>
+<td>Retrieve movie by ID</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Param: <code>id</code> (ObjectId)</td>
+<td>200 (Movie details), 400 (Invalid ID), 404 (Not found)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/movies</code></td>
+<td style="text-align: center;">POST</td>
+<td>Create new movie</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td><code>{ title, description, genre, certification, runtimeMinutes, releaseDate, posterUrl }</code></td>
+<td>201 (Created movie), 400 (Validation), 403 (Forbidden)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/movies/:id</code></td>
+<td style="text-align: center;">PUT</td>
+<td>Update movie details</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td>Param: <code>id</code>, Body: Movie fields</td>
+<td>200 (Updated movie), 400 (Validation), 404 (Not found)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/movies/:id</code></td>
+<td style="text-align: center;">DELETE</td>
+<td>Delete/Archive movie</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td>Param: <code>id</code></td>
+<td>200 (Success message), 404 (Not found), 409 (Active shows exist)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/theatres</code></td>
+<td style="text-align: center;">GET</td>
+<td>List all theatres</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Query: <code>?city=</code></td>
+<td>200 (Array of theatres with seating configs)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/theatres/:id</code></td>
+<td style="text-align: center;">GET</td>
+<td>Theatre details</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Param: <code>id</code></td>
+<td>200 (Theatre object), 404 (Not found)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/theatres</code></td>
+<td style="text-align: center;">POST</td>
+<td>Create new theatre</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td><code>{ name, location, city, seatingCapacity }</code></td>
+<td>201 (Created theatre), 400 (Validation), 403 (Forbidden)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/theatres/:id</code></td>
+<td style="text-align: center;">PUT</td>
+<td>Update theatre</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td>Param: <code>id</code>, Body: Theatre fields</td>
+<td>200 (Updated theatre), 400 (Validation), 404 (Not found)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/shows</code></td>
+<td style="text-align: center;">GET</td>
+<td>Query active shows</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Query: <code>?movieId=&amp;theatreId=&amp;date=</code></td>
+<td>200 (List of matching shows populated with theatre info)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/shows/:id</code></td>
+<td style="text-align: center;">GET</td>
+<td>Show details &amp; pricing</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Param: <code>id</code></td>
+<td>200 (Show details, pricing, booked seat IDs)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/shows/:id/seats</code></td>
+<td style="text-align: center;">GET</td>
+<td>Live seat map status</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Param: <code>id</code></td>
+<td>200 (Tier layouts, booked seat list, remaining counts)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/shows</code></td>
+<td style="text-align: center;">POST</td>
+<td>Schedule new show</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td><code>{ movie, theatre, showDate, showTime, pricing }</code></td>
+<td>201 (Created show), 400 (Validation), 409 (Hall schedule conflict)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/shows/:id</code></td>
+<td style="text-align: center;">DELETE</td>
+<td>Cancel/Remove show</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td>Param: <code>id</code></td>
+<td>200 (Success), 409 (Show has existing confirmed bookings)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/bookings</code></td>
+<td style="text-align: center;">POST</td>
+<td>Book seats atomically</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td><code>{ showId, selectedSeats: ['L-1', 'L-2'] }</code></td>
+<td>201 (Confirmed booking &amp; ticket), 400 (Validation), 409 (Seat already booked)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/bookings/my-bookings</code></td>
+<td style="text-align: center;">GET</td>
+<td>User booking history</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td>None</td>
+<td>200 (Array of user bookings with show &amp; movie info)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/bookings/:id</code></td>
+<td style="text-align: center;">GET</td>
+<td>Booking ticket details</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User/Admin</td>
+<td>Param: <code>id</code></td>
+<td>200 (Detailed ticket view), 403 (Access denied), 404 (Not found)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/bookings/:id/cancel</code></td>
+<td style="text-align: center;">PUT</td>
+<td>Cancel user booking</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td>Param: <code>id</code></td>
+<td>200 (Cancelled &amp; seats released), 400 (Past show cutoff)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/favorites</code></td>
+<td style="text-align: center;">GET</td>
+<td>Fetch user favorites</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td>None</td>
+<td>200 (Array of favorited movies)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/favorites/:movieId</code></td>
+<td style="text-align: center;">POST</td>
+<td>Add movie to favorites</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td>Param: <code>movieId</code></td>
+<td>201 (Added to favorites), 409 (Already favorited)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/favorites/:movieId</code></td>
+<td style="text-align: center;">DELETE</td>
+<td>Remove from favorites</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td>Param: <code>movieId</code></td>
+<td>200 (Removed), 404 (Not found in favorites)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/movies/:id/reviews</code></td>
+<td style="text-align: center;">GET</td>
+<td>Get reviews for movie</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">Public</td>
+<td>Param: <code>id</code></td>
+<td>200 (Array of reviews with author username)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/reviews</code></td>
+<td style="text-align: center;">POST</td>
+<td>Submit movie review</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td><code>{ movieId, rating, comment }</code></td>
+<td>201 (Review created &amp; movie average updated), 409 (Duplicate review)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/reviews/:id</code></td>
+<td style="text-align: center;">PUT</td>
+<td>Update user review</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User</td>
+<td>Param: <code>id</code>, Body: <code>{ rating, comment }</code></td>
+<td>200 (Updated review &amp; recomputed average), 403 (Not review owner)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/reviews/:id</code></td>
+<td style="text-align: center;">DELETE</td>
+<td>Delete review</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">User/Admin</td>
+<td>Param: <code>id</code></td>
+<td>200 (Review removed), 403 (Not owner or admin)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/admin/stats</code></td>
+<td style="text-align: center;">GET</td>
+<td>Platform analytics</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td>None</td>
+<td>200 (Total revenue, user count, tickets sold, active shows)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+<tr>
+<td><code>/api/admin/bookings</code></td>
+<td style="text-align: center;">GET</td>
+<td>Audit all bookings</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Admin</td>
+<td>Query: <code>?status=&amp;theatreId=&amp;date=</code></td>
+<td>200 (Paginated list of all system bookings)</td>
+<td style="text-align: center;">Proposed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-frontend-architecture-page-by-page-implementation-plan">8. Frontend Architecture &amp; Page-by-Page Implementation Plan</h2>
+<h3 id="81-styling-strategy-architectural-rationale">8.1 Styling Strategy &amp; Architectural Rationale</h3>
+<p>In accordance with modern web engineering best practices:
+- <strong>Primary Styling</strong>: Pure Vanilla Modern CSS utilizing custom CSS design variables (<code>:root</code>) for color palettes, spacing tokens, elevations, and responsive typography. This provides total layout control, zero third-party component lock-in, and instant load times.
+- <strong>Theme Palette</strong>: Deep cinematic dark mode (Background: <code>#0B0F19</code>, Surface: <code>#161F30</code>, Card: <code>#1F293D</code>, Accent Amber: <code>#F59E0B</code>, Vibrant Cyan: <code>#06B6D4</code>, Crimson Alert: <code>#EF4444</code>).
+- <strong>Responsive Breakpoints</strong>: Mobile (<code>&lt; 640px</code>), Tablet (<code>640px - 1024px</code>), Desktop (<code>&gt; 1024px</code>).</p>
+<h3 id="82-client-route-structure">8.2 Client Route Structure</h3>
+<pre><code>/                      -&gt; HomePage (Hero banner, now showing, upcoming)
+/movies                -&gt; MovieCatalogPage (Search, genre filters, movie grid)
+/movies/:id            -&gt; MovieDetailPage (Metadata, synopsis, trailer, date picker, showtimes)
+/book/:showId          -&gt; SeatBookingPage (Interactive seat layout, tier pricing, live checkout)
+/booking/success/:id   -&gt; BookingConfirmationPage (Ticket slip, QR placeholder, print view)
+/login                 -&gt; LoginPage (Customer &amp; Admin authentication)
+/register              -&gt; RegisterPage (Account creation)
+/profile               -&gt; UserProfilePage (Account settings, preferences)
+/my-bookings           -&gt; MyBookingsPage (Past &amp; active tickets, cancellation)
+/favorites             -&gt; FavoritesPage (User's saved movies)
+/admin/dashboard       -&gt; AdminDashboardPage (Analytics, revenue counters)
+/admin/movies          -&gt; AdminMoviesPage (Movie master catalog management)
+/admin/theatres        -&gt; AdminTheatresPage (Theatre capacity and tier setup)
+/admin/shows           -&gt; AdminShowsPage (Showtime scheduler with collision detection)
+/admin/bookings        -&gt; AdminBookingsPage (Platform booking audit log)
+</code></pre>
+<h3 id="83-detailed-page-specifications">8.3 Detailed Page Specifications</h3>
+<h4 id="page-1-homepage">Page 1: HomePage (<code>/</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Welcoming landing portal showcasing trending films, quick search, and active cinema screenings.</li>
+<li><strong>Main Components</strong>: HeroCarousel, QuickSearchWidget, NowShowingSection, UpcomingReleasesSection, Footer.</li>
+<li><strong>Backend Endpoints</strong>: <code>GET /api/movies?limit=8</code>.</li>
+<li><strong>States</strong>: Skeleton cards on load, empty state banner if no screenings exist, error toast on network failure.</li>
+<li><strong>Acceptance Criteria</strong>: Displays movie poster cards with ratings, clicking a card routes to <code>/movies/:id</code>.</li>
+</ul>
+<h4 id="page-2-moviecatalogpage-movies">Page 2: MovieCatalogPage (<code>/movies</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Full discovery page allowing multi-criteria filtering and text search.</li>
+<li><strong>Main Components</strong>: FilterSidebar (genres, certifications), SearchBar (debounced input), MovieGrid, PaginationControls.</li>
+<li><strong>Backend Endpoints</strong>: <code>GET /api/movies?search=...&amp;genre=...&amp;page=...</code>.</li>
+<li><strong>States</strong>: Live loading spinner, zero search results fallback screen with reset button.</li>
+</ul>
+<h4 id="page-3-moviedetailpage-moviesid">Page 3: MovieDetailPage (<code>/movies/:id</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Comprehensive movie profile and cinema showtime selector.</li>
+<li><strong>Main Components</strong>: BackdropHero, MovieMetadataCard, SynopsisBlock, DateSelectorBar (next 7 days), TheatreShowtimeAccordion, ReviewsList, ReviewSubmissionModal.</li>
+<li><strong>Backend Endpoints</strong>: <code>GET /api/movies/:id</code>, <code>GET /api/shows?movieId=:id&amp;date=YYYY-MM-DD</code>, <code>GET /api/movies/:id/reviews</code>, <code>POST /api/favorites/:id</code>.</li>
+<li><strong>Acceptance Criteria</strong>: Selecting a date dynamically updates the showtime buttons grouped by theatre. Clicking a showtime routes to <code>/book/:showId</code>.</li>
+</ul>
+<h4 id="page-4-interactive-seatbookingpage-bookshowid">Page 4: Interactive SeatBookingPage (<code>/book/:showId</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: High-fidelity interactive cinema hall seat selector with tier segregation.</li>
+<li><strong>Main Components</strong>: ScreenCurveVisual, TierHeader (Lower, Middle, Balcony with pricing), SeatGrid, SeatLegend (Available, Selected, Booked), OrderSummaryPanel, ConfirmBookingButton.</li>
+<li><strong>Backend Endpoints</strong>: <code>GET /api/shows/:id/seats</code>, <code>POST /api/bookings</code>.</li>
+<li><strong>User Interactions</strong>:</li>
+<li>Clicking an available seat toggles selection state.</li>
+<li>Booked seats are permanently disabled with visual lock styling.</li>
+<li>Dynamic checkout panel calculates subtotal across multiple tiers.</li>
+<li>Submitting dispatches atomic booking request. On 409 Conflict (seat taken concurrently), alerts user and refreshes seat map.</li>
+<li><strong>Acceptance Criteria</strong>: Strictly enforces that already booked seats cannot be clicked. Successful booking routes to <code>/booking/success/:id</code>.</li>
+</ul>
+<h4 id="page-5-bookingconfirmationpage-bookingsuccessid">Page 5: BookingConfirmationPage (<code>/booking/success/:id</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Digital ticket receipt with print functionality.</li>
+<li><strong>Main Components</strong>: TicketCard (Movie poster, theatre name, hall, show date/time, seat codes, total price, booking reference UUID), PrintTicketButton, BackToHomeButton.</li>
+<li><strong>Backend Endpoints</strong>: <code>GET /api/bookings/:id</code>.</li>
+<li><strong>Acceptance Criteria</strong>: Formatted for browser print (<code>@media print</code> stylesheet) and accessible in customer's booking history.</li>
+</ul>
+<hr />
+<h2 id="9-security-concurrency-data-integrity-strategy">9. Security, Concurrency &amp; Data Integrity Strategy</h2>
+<h3 id="91-concurrency-double-booking-prevention-architecture">9.1 Concurrency &amp; Double-Booking Prevention Architecture</h3>
+<p>In online ticket booking systems, race conditions where two simultaneous requests attempt to reserve the same seat (<code>L-15</code>) represent the highest risk failure mode.</p>
+<h4 id="the-problem-with-naive-implementation">The Problem with Naive Implementation:</h4>
+<pre><code class="language-javascript">// NAIVE (BUGGY) APPROACH - LEADS TO DOUBLE BOOKING:
+const show = await Show.findById(showId);
+if (show.bookedSeats.includes('L-15')) {
+  return res.status(400).send(&quot;Seat already booked&quot;);
+}
+// Concurrency window: Another request executes here before save!
+show.bookedSeats.push('L-15');
+await show.save();
+</code></pre>
+<h4 id="approved-production-solution-database-level-atomic-conditional-updates">Approved Production Solution: Database-Level Atomic Conditional Updates</h4>
+<p>We utilize MongoDB's atomic single-document conditional update operators:</p>
+<pre><code class="language-javascript">// ATOMIC &amp; RACE-CONDITION-FREE BOOKING LOGIC:
+const updatedShow = await Show.findOneAndUpdate(
+  {
+    _id: showId,
+    // Condition: ALL requested seats must NOT be present in bookedSeats
+    bookedSeats: { $nin: selectedSeats }
+  },
+  {
+    // Atomically push all requested seats into the booked array
+    $push: { bookedSeats: { $each: selectedSeats } }
+  },
+  { new: true }
+);
+
+if (!updatedShow) {
+  // If no document matched, at least one seat was claimed concurrently
+  return res.status(409).json({
+    success: false,
+    message: &quot;One or more selected seats have already been booked by another customer. Please choose different seats.&quot;,
+    error: { code: &quot;SEATS_CONCURRENTLY_RESERVED&quot; }
+  });
+}
+
+// Seat reservation secured atomically; create confirmed booking record
+const booking = await Booking.create({
+  bookingReference: `IMV-${Date.now()}-${Math.floor(1000 + Math.random() * 9000)}`,
+  user: req.user.id,
+  show: showId,
+  seats: seatDetailsArray,
+  totalAmount: calculatedTotal,
+  status: 'CONFIRMED'
+});
+</code></pre>
+<h3 id="92-cryptographic-controls-authentication-security">9.2 Cryptographic Controls &amp; Authentication Security</h3>
+<ul>
+<li><strong>Bcrypt Salt Generation</strong>: <code>bcrypt.hash(password, 10)</code>. Passwords are never stored in plaintext or logged.</li>
+<li><strong>Password Exclusion in Serialization</strong>: The User schema utilizes Mongoose's <code>toJSON</code> transform to guarantee <code>password</code> is never included in outgoing responses:
+  <code>javascript
+  userSchema.set('toJSON', {
+    transform: (doc, ret) =&gt; {
+      delete ret.password;
+      return ret;
+    }
+  });</code></li>
+<li><strong>JWT Lifecycles &amp; Security</strong>: Signed using a minimum 256-bit secret key with an expiration window of 24 hours (<code>expiresIn: '24h'</code>).</li>
+<li><strong>NoSQL Injection Defense</strong>: Strict type validation through <code>express-validator</code> prevents query object injection attacks (e.g. <code>{ "email": { "$gt": "" } }</code>).</li>
+<li><strong>CORS Protection</strong>: CORS configured to reject arbitrary external origins, explicitly binding to authorized client domains.</li>
+<li><strong>Rate Limiting</strong>: Configured using <code>express-rate-limit</code> allowing maximum 10 login attempts per 15-minute window per IP to eliminate brute-force vulnerability.</li>
+</ul>
+<hr />
+<h2 id="10-comprehensive-testing-strategy-test-matrices">10. Comprehensive Testing Strategy &amp; Test Matrices</h2>
+<h3 id="101-automated-testing-architecture">10.1 Automated Testing Architecture</h3>
+<p>Testing is structured across three concentric tiers using <strong>Jest</strong>, <strong>Supertest</strong>, and <strong>mongodb-memory-server</strong>:
+1. <strong>Unit Tests</strong>: Pure business logic (seat pricing calculation, JWT helper functions, password hashing utilities).
+2. <strong>Integration Tests</strong>: REST API endpoints, middleware authorization pipelines, and Mongoose query transactions.
+3. <strong>Concurrency Stress Tests</strong>: Simulated high-throughput race condition scripts.</p>
+<h3 id="102-concurrency-stress-test-specification-conc-test-01">10.2 Concurrency Stress Test Specification (<code>CONC-TEST-01</code>)</h3>
+<ul>
+<li><strong>Objective</strong>: Mathematically prove zero double-booking under concurrent load.</li>
+<li><strong>Methodology</strong>:</li>
+<li>Initialize test Show with 100 available seats.</li>
+<li>Launch 10 asynchronous concurrent HTTP <code>POST /api/bookings</code> requests targeting identical seat <code>L-5</code> simultaneously using <code>Promise.all()</code>.</li>
+<li><strong>Expected Outcome</strong>: Exactly 1 request receives HTTP 201 Created; exactly 9 requests receive HTTP 409 Conflict.</li>
+<li>Inspect database: <code>Show.bookedSeats</code> contains exactly one entry for <code>L-5</code>.</li>
+</ul>
+<h3 id="103-negative-security-test-suite-matrix">10.3 Negative &amp; Security Test Suite Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Target Component</th>
+<th>Test Scenario</th>
+<th>Input Payload</th>
+<th style="text-align: center;">Expected HTTP Status</th>
+<th>Expected Assertion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NEG-01</strong></td>
+<td><code>POST /api/auth/register</code></td>
+<td>Duplicate Email Registration</td>
+<td>Existing user email</td>
+<td style="text-align: center;"><code>409 Conflict</code></td>
+<td>Message indicates email already registered</td>
+</tr>
+<tr>
+<td><strong>NEG-02</strong></td>
+<td><code>POST /api/auth/register</code></td>
+<td>Weak Password</td>
+<td>Password <code>&lt; 8</code> chars</td>
+<td style="text-align: center;"><code>400 Bad Request</code></td>
+<td>Validation error array identifies password rule</td>
+</tr>
+<tr>
+<td><strong>NEG-03</strong></td>
+<td><code>POST /api/auth/login</code></td>
+<td>Invalid Password</td>
+<td>Correct email, wrong password</td>
+<td style="text-align: center;"><code>401 Unauthorized</code></td>
+<td>Generic credential rejection message</td>
+</tr>
+<tr>
+<td><strong>NEG-04</strong></td>
+<td><code>GET /api/admin/stats</code></td>
+<td>Regular User Accessing Admin</td>
+<td>Valid User JWT token</td>
+<td style="text-align: center;"><code>403 Forbidden</code></td>
+<td>Access denied for non-admin role</td>
+</tr>
+<tr>
+<td><strong>NEG-05</strong></td>
+<td><code>GET /api/movies/:id</code></td>
+<td>Invalid MongoDB ObjectId</td>
+<td><code>GET /api/movies/invalid-id-123</code></td>
+<td style="text-align: center;"><code>400 Bad Request</code></td>
+<td>Handled gracefully without CastError crash</td>
+</tr>
+<tr>
+<td><strong>NEG-06</strong></td>
+<td><code>POST /api/shows</code></td>
+<td>Overlapping Show Schedule</td>
+<td>Same theatre, overlapping time</td>
+<td style="text-align: center;"><code>409 Conflict</code></td>
+<td>Schedule conflict detected</td>
+</tr>
+<tr>
+<td><strong>NEG-07</strong></td>
+<td><code>POST /api/bookings</code></td>
+<td>Booking Without Token</td>
+<td>Missing Authorization header</td>
+<td style="text-align: center;"><code>401 Unauthorized</code></td>
+<td>Access token required</td>
+</tr>
+<tr>
+<td><strong>NEG-08</strong></td>
+<td><code>PUT /api/bookings/:id/cancel</code></td>
+<td>Cancelling Past Show</td>
+<td>Booking ID for show from yesterday</td>
+<td style="text-align: center;"><code>400 Bad Request</code></td>
+<td>Cancellation window expired</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-phased-implementation-roadmap-dependency-matrix">11. Phased Implementation Roadmap &amp; Dependency Matrix</h2>
+<pre><code class="language-mermaid">graph TD
+    P0[Phase 0: Audit &amp; Specification] --&gt; P1[Phase 1: Environment &amp; Base Setup]
+    P1 --&gt; P2[Phase 2: Database Models &amp; Schemas]
+    P2 --&gt; P3[Phase 3: Auth &amp; Identity Services]
+    P3 --&gt; P4[Phase 4: Movie Catalog APIs]
+    P3 --&gt; P5[Phase 5: Theatres &amp; Show Scheduler]
+    P4 --&gt; P6[Phase 6: Seat Booking &amp; Concurrency]
+    P5 --&gt; P6
+    P4 --&gt; P7[Phase 7: Favorites &amp; Reviews]
+    P6 --&gt; P8[Phase 8: Frontend Application]
+    P7 --&gt; P8
+    P8 --&gt; P9[Phase 9: Testing &amp; Security Audit]
+    P9 --&gt; P10[Phase 10: Deployment &amp; Handover]
+</code></pre>
+<h3 id="111-detailed-phase-breakdown">11.1 Detailed Phase Breakdown</h3>
+<h4 id="phase-0-repository-audit-requirements-baseline-completed">Phase 0: Repository Audit &amp; Requirements Baseline (Completed)</h4>
+<ul>
+<li><strong>Objective</strong>: Conduct exhaustive audit of workspace, identify gaps, and publish architectural blueprints.</li>
+<li><strong>Deliverables</strong>: <code>docs/iMovies_Project_Plan.md</code>, <code>docs/iMovies_Evaluation_Checklist.md</code>, <code>docs/iMovies_Task_Tracker.csv</code>, <code>docs/iMovies_Project_Plan.pdf</code>.</li>
+</ul>
+<h4 id="phase-1-environment-server-foundation-effort-4-6-hours">Phase 1: Environment &amp; Server Foundation (Effort: 4-6 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>ENV-01</code>, <code>ENV-02</code>, <code>ENV-03</code>.</li>
+<li><strong>Deliverables</strong>: Initialized <code>package.json</code>, Express application entry (<code>server.js</code>), MongoDB connection module with event listeners, <code>.env.example</code>, security headers.</li>
+<li><strong>Dependencies</strong>: None.</li>
+</ul>
+<h4 id="phase-2-schema-architecture-data-integrity-effort-6-8-hours">Phase 2: Schema Architecture &amp; Data Integrity (Effort: 6-8 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>AUTH-01</code>, <code>MOV-01</code>, <code>THTR-01</code>, <code>SHOW-01</code>, <code>BOOK-01</code>, <code>FAV-01</code>, <code>REV-01</code>.</li>
+<li><strong>Deliverables</strong>: All 7 Mongoose models implemented with field constraints, compound indexes, and relationship references.</li>
+<li><strong>Dependencies</strong>: Phase 1.</li>
+</ul>
+<h4 id="phase-3-authentication-role-authorization-effort-6-8-hours">Phase 3: Authentication &amp; Role Authorization (Effort: 6-8 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>AUTH-02</code>, <code>AUTH-03</code>, <code>AUTH-04</code>, <code>AUTH-05</code>, <code>AUTH-06</code>, <code>AUTH-07</code>, <code>AUTH-08</code>.</li>
+<li><strong>Deliverables</strong>: User/Admin registration, login, JWT issuance, <code>fetchUser</code> and <code>authorizeRole</code> middlewares.</li>
+<li><strong>Dependencies</strong>: Phase 2.</li>
+</ul>
+<h4 id="phase-4-movies-discovery-master-catalog-effort-5-7-hours">Phase 4: Movies Discovery &amp; Master Catalog (Effort: 5-7 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>MOV-02</code>, <code>MOV-03</code>, <code>MOV-04</code>, <code>MOV-05</code>.</li>
+<li><strong>Deliverables</strong>: Public movie catalog search, genre filtering, pagination, and admin CRUD endpoints.</li>
+<li><strong>Dependencies</strong>: Phase 3.</li>
+</ul>
+<h4 id="phase-5-theatre-show-scheduling-engine-effort-6-8-hours">Phase 5: Theatre &amp; Show Scheduling Engine (Effort: 6-8 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>THTR-02</code>, <code>SHOW-02</code>, <code>SHOW-03</code>.</li>
+<li><strong>Deliverables</strong>: Theatre management APIs, collision-free show scheduling, showtimes query by date.</li>
+<li><strong>Dependencies</strong>: Phase 4.</li>
+</ul>
+<h4 id="phase-6-seat-availability-atomic-booking-engine-effort-8-10-hours">Phase 6: Seat Availability &amp; Atomic Booking Engine (Effort: 8-10 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>BOOK-02</code>, <code>BOOK-03</code>, <code>BOOK-04</code>, <code>BOOK-05</code>.</li>
+<li><strong>Deliverables</strong>: Live seat map API, atomic conditional booking engine, user booking history, ticket cancellation.</li>
+<li><strong>Dependencies</strong>: Phase 5.</li>
+</ul>
+<h4 id="phase-7-community-reviews-favorites-effort-4-6-hours">Phase 7: Community Reviews &amp; Favorites (Effort: 4-6 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>FAV-01</code>, <code>REV-02</code>.</li>
+<li><strong>Deliverables</strong>: Movie favorites toggle, review submission and rating recalculation.</li>
+<li><strong>Dependencies</strong>: Phase 4.</li>
+</ul>
+<h4 id="phase-8-frontend-client-development-effort-16-20-hours">Phase 8: Frontend Client Development (Effort: 16-20 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>UI-01</code> through <code>UI-09</code>.</li>
+<li><strong>Deliverables</strong>: Full React + Vite application with responsive CSS design tokens, AuthContext, interactive seat selector, booking flow, and admin portal.</li>
+<li><strong>Dependencies</strong>: Phases 3, 4, 5, 6, 7.</li>
+</ul>
+<h4 id="phase-9-automated-testing-security-hardening-effort-8-10-hours">Phase 9: Automated Testing &amp; Security Hardening (Effort: 8-10 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>QA-01</code>, <code>QA-02</code>, <code>QA-03</code>.</li>
+<li><strong>Deliverables</strong>: Jest test suites, automated double-booking concurrency test, security audit report.</li>
+<li><strong>Dependencies</strong>: Phase 8.</li>
+</ul>
+<h4 id="phase-10-deployment-documentation-evaluation-effort-4-6-hours">Phase 10: Deployment, Documentation &amp; Evaluation (Effort: 4-6 Hours)</h4>
+<ul>
+<li><strong>Tasks</strong>: <code>DEP-01</code>.</li>
+<li><strong>Deliverables</strong>: Production build, Dockerfile/compose configuration, final evaluation audit walkthrough.</li>
+<li><strong>Dependencies</strong>: Phase 9.</li>
+</ul>
+<hr />
+<h2 id="12-prioritization-scope-control-mvp-definition">12. Prioritization, Scope Control &amp; MVP Definition</h2>
+<h3 id="121-priority-classifications">12.1 Priority Classifications</h3>
+<ul>
+<li><strong>P0 (Critical Path / MVP Core)</strong>: Must be 100% operational for the application to function.</li>
+<li>User Registration &amp; Login with JWT and Bcrypt</li>
+<li>Movie Catalog, Details &amp; Search</li>
+<li>Theatre &amp; Show Creation with Conflict Prevention</li>
+<li>Real-Time Seat Map Display</li>
+<li>Atomic Seat Booking with Race-Condition Prevention</li>
+<li>User Ticket View &amp; Confirmation</li>
+<li><strong>P1 (Standard Release Baseline)</strong>: Required for a polished full release.</li>
+<li>Movie Favorites Management</li>
+<li>User Reviews &amp; Star Ratings</li>
+<li>Booking Cancellation &amp; Seat Release</li>
+<li>Admin Dashboard &amp; Analytics Counters</li>
+<li>Responsive Mobile Navigation</li>
+<li><strong>P2 (Useful Enhancements)</strong>: Post-launch iterative improvements.</li>
+<li>Razorpay / Stripe Payment Gateway Integration</li>
+<li>Asynchronous Email Ticket Confirmation (Nodemailer)</li>
+<li>Real-Time Live Seat Locks via WebSockets (Socket.IO)</li>
+<li><strong>P3 (Future Extensions)</strong>: Enterprise scaling.</li>
+<li>Microservices decoupling, Redis caching layer, multi-cinema chain SaaS tenancy.</li>
+</ul>
+<hr />
+<h2 id="13-project-evaluation-rubric-quality-assurance-standards">13. Project Evaluation Rubric &amp; Quality Assurance Standards</h2>
+<h3 id="131-scoring-distribution-100-points-total">13.1 Scoring Distribution (100 Points Total)</h3>
+<ul>
+<li><strong>Functional Correctness &amp; Completeness</strong>: 20 Points</li>
+<li><strong>Backend Architecture &amp; Code Quality</strong>: 15 Points</li>
+<li><strong>Database Design, Relationships &amp; Data Integrity</strong>: 15 Points</li>
+<li><strong>Authentication, Authorization &amp; Security</strong>: 15 Points</li>
+<li><strong>Booking Concurrency &amp; Seat Integrity</strong>: 10 Points</li>
+<li><strong>Frontend Usability, Aesthetics &amp; Responsiveness</strong>: 10 Points</li>
+<li><strong>Automated Testing &amp; Error Handling</strong>: 10 Points</li>
+<li><strong>Documentation, Deployment &amp; Repository Hygiene</strong>: 5 Points</li>
+</ul>
+<p><em>(Refer to <code>docs/iMovies_Evaluation_Checklist.md</code> for the line-item grading sheet and measurable evidence criteria).</em></p>
+<hr />
+<h2 id="14-comprehensive-risk-register">14. Comprehensive Risk Register</h2>
+<table>
+<thead>
+<tr>
+<th>Risk ID</th>
+<th>Risk Description</th>
+<th style="text-align: center;">Prob.</th>
+<th style="text-align: center;">Impact</th>
+<th style="text-align: center;">Severity</th>
+<th>Affected Component</th>
+<th>Mitigation Strategy</th>
+<th>Verification Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RSK-01</strong></td>
+<td>Concurrent double booking of identical seats during high-demand release</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Critical</td>
+<td style="text-align: center;"><strong>High</strong></td>
+<td>Booking Engine / Show Model</td>
+<td>Implement database-level atomic conditional update (<code>$nin</code> operator)</td>
+<td>Automated concurrency test script with 10 simultaneous requests</td>
+</tr>
+<tr>
+<td><strong>RSK-02</strong></td>
+<td>Conflicting show schedules assigned to same theatre hall</td>
+<td style="text-align: center;">Med</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;"><strong>High</strong></td>
+<td>Show Scheduling API</td>
+<td>Compound unique index <code>(theatre, date, time)</code> + duration collision check</td>
+<td>Attempt creating overlapping show times; verify 409 Conflict</td>
+</tr>
+<tr>
+<td><strong>RSK-03</strong></td>
+<td>Privilege escalation via manipulation of role payload</td>
+<td style="text-align: center;">Med</td>
+<td style="text-align: center;">Critical</td>
+<td style="text-align: center;"><strong>High</strong></td>
+<td>Auth Middleware</td>
+<td>Disallow <code>role</code> field assignment in public registration; default strictly to <code>'user'</code></td>
+<td>Attempt <code>POST /api/auth/register</code> with <code>{ role: 'admin' }</code>; verify stored role</td>
+</tr>
+<tr>
+<td><strong>RSK-04</strong></td>
+<td>Plaintext password or secret key leakage in git / responses</td>
+<td style="text-align: center;">Low</td>
+<td style="text-align: center;">Critical</td>
+<td style="text-align: center;"><strong>High</strong></td>
+<td>User Model / Git</td>
+<td>Enforce Mongoose <code>toJSON</code> password deletion; add <code>.env</code> to <code>.gitignore</code></td>
+<td>Automated grep across codebase and commit log</td>
+</tr>
+<tr>
+<td><strong>RSK-05</strong></td>
+<td>NoSQL query injection via object injection in request body</td>
+<td style="text-align: center;">Med</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;"><strong>Med</strong></td>
+<td>Express Routers</td>
+<td>Express-validator type checks on all string parameters</td>
+<td>Inject <code>{ "$gt": "" }</code> payloads; verify HTTP 400 rejection</td>
+</tr>
+<tr>
+<td><strong>RSK-06</strong></td>
+<td>Orphaned booking records if seat allocation fails mid-transaction</td>
+<td style="text-align: center;">Low</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;"><strong>Med</strong></td>
+<td>Booking Service</td>
+<td>Structure atomic single-document updates; verify update output before creating ticket</td>
+<td>Inspect database after simulated mid-operation network failure</td>
+</tr>
+<tr>
+<td><strong>RSK-07</strong></td>
+<td>CastError crashes on malformed MongoDB ObjectIds</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Med</td>
+<td style="text-align: center;"><strong>Med</strong></td>
+<td>Movie/Show/Booking Routes</td>
+<td>Parameter validation middleware verifying <code>isValidObjectId</code> before query</td>
+<td>Query routes with <code>/api/movies/not-a-valid-id</code>; verify clean HTTP 400</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="15-operational-setup-environment-configuration-repository-hygiene">15. Operational Setup, Environment Configuration &amp; Repository Hygiene</h2>
+<h3 id="151-prerequisites">15.1 Prerequisites</h3>
+<ul>
+<li><strong>Node.js</strong>: v18.18.0 LTS or v20.x+</li>
+<li><strong>npm</strong>: v9.x or v10.x+</li>
+<li><strong>MongoDB</strong>: Community Server v6.0+ running on port <code>27017</code> (or MongoDB Atlas cloud cluster)</li>
+</ul>
+<h3 id="152-environment-variables-guide-envexample">15.2 Environment Variables Guide (<code>.env.example</code>)</h3>
+<p>Create <code>.env</code> in the backend root directory (never commit to version control):</p>
+<pre><code class="language-env"># Server Network Configuration
+PORT=5000
+NODE_ENV=development
+
+# Database Connection
+MONGO_URI=mongodb://localhost:27017/imovies_db
+
+# Cryptography &amp; Token Secrets
+JWT_SECRET=super_secure_jwt_secret_key_minimum_32_characters_random
+JWT_EXPIRES_IN=24h
+BCRYPT_SALT_ROUNDS=10
+
+# Cross-Origin Security
+CLIENT_ORIGIN=http://localhost:5173
+</code></pre>
+<h3 id="153-step-by-step-local-development-startup">15.3 Step-by-Step Local Development Startup</h3>
+<pre><code class="language-bash"># ==========================================
+# 1. CLONE &amp; NAVIGATE TO PROJECT ROOT
+# ==========================================
+cd d:\agent2\MovieTicket
+
+# ==========================================
+# 2. BACKEND SETUP &amp; INITIALIZATION
+# ==========================================
+cd backend
+npm install
+cp .env.example .env
+# Edit .env with your local MongoDB URI and JWT Secret
+
+# Start Backend Development Server (Port 5000)
+npm run dev
+
+# ==========================================
+# 3. FRONTEND SETUP &amp; INITIALIZATION
+# ==========================================
+cd ../frontend
+npm install
+
+# Start Frontend Development Server (Port 5173)
+npm run dev
+
+# Open application in browser: http://localhost:5173
+</code></pre>
+<hr />
+<h2 id="16-trackable-task-tracker-checklist">16. Trackable Task Tracker Checklist</h2>
+<p>Use these trackable markdown checkboxes to monitor progress throughout the development lifecycle:</p>
+<h3 id="phase-1-environment-project-setup">Phase 1: Environment &amp; Project Setup</h3>
+<ul>
+<li>[ ] <strong>ENV-01</strong>: Initialize Node.js backend package.json, Express server entry point, and directory structure.</li>
+<li>[ ] <strong>ENV-02</strong>: Implement MongoDB Mongoose connection with retry handling and event logging.</li>
+<li>[ ] <strong>ENV-03</strong>: Setup <code>.env.example</code>, security middleware (<code>cors</code>, <code>helmet</code>, <code>express-rate-limit</code>).</li>
+</ul>
+<h3 id="phase-2-schema-architecture">Phase 2: Schema Architecture</h3>
+<ul>
+<li>[ ] <strong>AUTH-01</strong>: Define unified <code>User</code> Mongoose schema with RBAC role discrimination.</li>
+<li>[ ] <strong>MOV-01</strong>: Define <code>Movie</code> Mongoose schema with certifications, runtime, and text search indexes.</li>
+<li>[ ] <strong>THTR-01</strong>: Define <code>Theatre</code> Mongoose schema with tiered seat capacities (Lower, Middle, Balcony).</li>
+<li>[ ] <strong>SHOW-01</strong>: Define <code>Show</code> Mongoose schema with movie/theatre references, compound scheduling index, and booked seats array.</li>
+<li>[ ] <strong>BOOK-01</strong>: Define <code>Booking</code> Mongoose schema with reference UUID, seat array, and status enum.</li>
+<li>[ ] <strong>FAV-01</strong>: Define <code>Favorite</code> Mongoose schema with unique compound index <code>(user, movie)</code>.</li>
+<li>[ ] <strong>REV-01</strong>: Define <code>Review</code> Mongoose schema with unique compound index <code>(user, movie)</code> and rating validation.</li>
+</ul>
+<h3 id="phase-3-authentication-security">Phase 3: Authentication &amp; Security</h3>
+<ul>
+<li>[ ] <strong>AUTH-02</strong>: Implement <code>bcrypt</code> password hashing and verification utility helpers.</li>
+<li>[ ] <strong>AUTH-03</strong>: Implement JWT token generation and verification services with expiration.</li>
+<li>[ ] <strong>AUTH-04</strong>: Build <code>POST /api/auth/register</code> customer registration endpoint.</li>
+<li>[ ] <strong>AUTH-05</strong>: Build <code>POST /api/auth/login</code> authentication endpoint.</li>
+<li>[ ] <strong>AUTH-06</strong>: Implement <code>fetchUser</code> authentication middleware.</li>
+<li>[ ] <strong>AUTH-07</strong>: Implement <code>authorizeRole</code> administrative access guard middleware.</li>
+<li>[ ] <strong>AUTH-08</strong>: Build <code>GET</code> and <code>PUT</code> <code>/api/auth/profile</code> endpoints.</li>
+</ul>
+<h3 id="phase-4-movies-catalog-discovery">Phase 4: Movies &amp; Catalog Discovery</h3>
+<ul>
+<li>[ ] <strong>MOV-02</strong>: Build <code>GET /api/movies</code> with search, genre filters, and pagination.</li>
+<li>[ ] <strong>MOV-03</strong>: Build <code>GET /api/movies/:id</code> movie details endpoint.</li>
+<li>[ ] <strong>MOV-04</strong>: Build <code>POST /api/movies</code> admin movie creation endpoint.</li>
+<li>[ ] <strong>MOV-05</strong>: Build <code>PUT</code> and <code>DELETE</code> <code>/api/movies/:id</code> admin endpoints.</li>
+</ul>
+<h3 id="phase-5-theatres-show-scheduling">Phase 5: Theatres &amp; Show Scheduling</h3>
+<ul>
+<li>[ ] <strong>THTR-02</strong>: Implement Theatre CRUD endpoints <code>/api/theatres</code>.</li>
+<li>[ ] <strong>SHOW-02</strong>: Implement <code>POST /api/shows</code> with hall schedule conflict detection.</li>
+<li>[ ] <strong>SHOW-03</strong>: Implement <code>GET /api/shows</code> queried by <code>movieId</code> and <code>date</code>.</li>
+</ul>
+<h3 id="phase-6-seat-booking-concurrency">Phase 6: Seat Booking &amp; Concurrency</h3>
+<ul>
+<li>[ ] <strong>BOOK-02</strong>: Build <code>GET /api/shows/:id/seats</code> live seat map and pricing API.</li>
+<li>[ ] <strong>BOOK-03</strong>: Build <code>POST /api/bookings</code> with atomic race-condition-free seat reservation.</li>
+<li>[ ] <strong>BOOK-04</strong>: Build <code>GET /api/bookings/my-bookings</code> and <code>GET /api/bookings/:id</code>.</li>
+<li>[ ] <strong>BOOK-05</strong>: Build <code>PUT /api/bookings/:id/cancel</code> booking cancellation with seat release.</li>
+</ul>
+<h3 id="phase-7-favorites-community-reviews">Phase 7: Favorites &amp; Community Reviews</h3>
+<ul>
+<li>[ ] <strong>FAV-02</strong>: Build <code>GET</code>, <code>POST</code>, <code>DELETE</code> <code>/api/favorites</code> endpoints.</li>
+<li>[ ] <strong>REV-02</strong>: Build Review CRUD endpoints and automatic movie rating recalculation.</li>
+</ul>
+<h3 id="phase-8-frontend-client-application">Phase 8: Frontend Client Application</h3>
+<ul>
+<li>[ ] <strong>UI-01</strong>: Initialize React + Vite project with Axios instance and base CSS tokens.</li>
+<li>[ ] <strong>UI-02</strong>: Build <code>AuthContext</code> and token lifecycle hooks.</li>
+<li>[ ] <strong>UI-03</strong>: Build responsive Navbar, Footer, and ProtectedRoute wrappers.</li>
+<li>[ ] <strong>UI-04</strong>: Implement HomePage (<code>/</code>) and MovieCatalogPage (<code>/movies</code>).</li>
+<li>[ ] <strong>UI-05</strong>: Implement MovieDetailPage (<code>/movies/:id</code>) with showtime selector.</li>
+<li>[ ] <strong>UI-06</strong>: Implement interactive SeatBookingPage (<code>/book/:showId</code>) with tier layout.</li>
+<li>[ ] <strong>UI-07</strong>: Implement BookingConfirmationPage (<code>/booking/success/:id</code>) with printable ticket.</li>
+<li>[ ] <strong>UI-08</strong>: Implement FavoritesPage and MovieReviews component.</li>
+<li>[ ] <strong>UI-09</strong>: Implement Admin Management Portal (Dashboard, Movies, Theatres, Shows).</li>
+</ul>
+<h3 id="phase-9-testing-quality-assurance">Phase 9: Testing &amp; Quality Assurance</h3>
+<ul>
+<li>[ ] <strong>QA-01</strong>: Execute automated Jest/Supertest integration test suite.</li>
+<li>[ ] <strong>QA-02</strong>: Execute automated concurrency test verifying double-booking prevention.</li>
+<li>[ ] <strong>QA-03</strong>: Conduct security audit (vulnerabilities, CORS, rate limiting, injection).</li>
+</ul>
+<h3 id="phase-10-deployment-handover">Phase 10: Deployment &amp; Handover</h3>
+<ul>
+<li>[ ] <strong>DEP-01</strong>: Verify production build, Docker setup, and complete final evaluation checklist.</li>
+</ul>
+<hr />
+<h2 id="17-future-enhancements-scalability-roadmap">17. Future Enhancements &amp; Scalability Roadmap</h2>
+<ol>
+<li><strong>Payment Gateway Integration (Stripe / Razorpay)</strong>: Transition booking creation from immediate confirmation to a two-phase commit: initiate pending booking with a 10-minute temporary seat lock, receive webhook event upon payment capture, and transition status to <code>CONFIRMED</code>.</li>
+<li><strong>Real-Time Live Seat Availability (Socket.IO)</strong>: Establish WebSocket connections on the seat selection page to broadcast seat selection events in real-time to other users viewing the same screening.</li>
+<li><strong>Automated Email Notifications (Nodemailer / SendGrid)</strong>: Asynchronous background worker queuing email delivery of booking confirmations with attached PDF tickets.</li>
+<li><strong>Microservices Decomposition (Long-Term)</strong>: As traffic scales beyond 10,000 requests/minute, decouple the monolithic service into specialized microservices: <code>auth-service</code>, <code>catalog-service</code>, <code>booking-engine</code>, and <code>notification-service</code> coordinated via Apache Kafka or RabbitMQ.</li>
+</ol>
+<hr />
+<h2 id="18-glossary-architectural-assumptions">18. Glossary &amp; Architectural Assumptions</h2>
+<ul>
+<li><strong>Atomic Operation</strong>: A database operation that completes entirely or has no effect at all, preventing intermediate states during concurrent access.</li>
+<li><strong>Bcrypt</strong>: Adaptive cryptographic key derivation function based on the Blowfish cipher used for secure password hashing.</li>
+<li><strong>JWT (JSON Web Token)</strong>: Compact URL-safe token format representing claims securely transferred between client and server.</li>
+<li><strong>RBAC (Role-Based Access Control)</strong>: Restricting system access to authorized users based on designated organizational roles (<code>user</code> vs <code>admin</code>).</li>
+<li><strong>Referential Integrity</strong>: Consistency between coupled database entities enforced via canonical MongoDB ObjectIds.</li>
+<li><strong>Screening Tier</strong>: Segregated hall seating sections (Lower, Middle, Balcony) characterized by distinct pricing structures.</li>
+</ul>
+<hr />
+<p><em>End of Master Project Plan Document.</em></p>
+</div>
+</body>
+</html>
