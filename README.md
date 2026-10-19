@@ -21,10 +21,9 @@
 6. [Complete REST API Reference](#-complete-rest-api-reference)
 7. [Repository & Directory Structure](#-repository--directory-structure)
 8. [Installation & Local Setup](#-installation--local-setup)
-9. [Evaluation & Quality Rubric](#-evaluation--quality-rubric)
-10. [Documentation Deliverables](#-documentation-deliverables)
-11. [Scalability & Future Roadmap](#-scalability--future-roadmap)
-12. [License & Acknowledgments](#-license--acknowledgments)
+9. [Documentation Deliverables](#-documentation-deliverables)
+10. [Scalability & Future Roadmap](#-scalability--future-roadmap)
+11. [License & Acknowledgments](#-license--acknowledgments)
 
 ---
 
@@ -318,11 +317,9 @@ All API responses follow a unified JSON envelope:
 
 ```
 d:/agent2/MovieTicket/
-├── docs/                                # Technical Planning & Audit Documentation
+├── docs/                                # Technical Planning & Architecture Documentation
 │   ├── iMovies_Project_Plan.pdf         # 22-page publication-quality master PDF plan
-│   ├── iMovies_Project_Plan.md          # 18-section architectural specification
-│   ├── iMovies_Evaluation_Checklist.md  # 100-point rubric for code review & grading
-│   ├── iMovies_Task_Tracker.csv         # 40-task machine-readable tracker
+│   ├── iMovies_Project_Plan.md          # Comprehensive architectural specification
 │   ├── iMovies_Project_Plan.html        # Styled source HTML for PDF compilation
 │   └── build_pdf.py                     # Automated PDF build pipeline
 ├── public/                              # Frontend Client Tier (Ticketnew Light)
@@ -382,32 +379,12 @@ The application will be live at:
 
 ---
 
-## 🏆 Evaluation & Quality Rubric
-
-The project includes an objective **100-Point Evaluation Rubric** across 8 core categories. See [`docs/iMovies_Evaluation_Checklist.md`](docs/iMovies_Evaluation_Checklist.md) for full scoring guidelines.
-
-| Category | Area | Points | Criteria & Evidence |
-|:---:|---|:---:|---|
-| **CAT-01** | Functional Correctness & Completeness | **20** | End-to-end booking flow, search, filtering, and ticket receipt |
-| **CAT-02** | Backend Architecture & Code Quality | **15** | Separation of concerns, centralized error handling, clean REST routes |
-| **CAT-03** | Database Design & Referential Integrity | **15** | Canonical `ObjectId` refs, compound unique indexes, schema constraints |
-| **CAT-04** | Authentication, Authorization & Security | **15** | Bcrypt hashing ($\ge 10$), JWT validation, RBAC admin guards |
-| **CAT-05** | Booking Concurrency & Seat Integrity | **10** | Zero double-booking via atomic conditional updates |
-| **CAT-06** | Frontend Usability & Design System | **10** | Ticketnew Light adherence, Be Vietnam Pro typography, responsive grid |
-| **CAT-07** | Automated Testing & Error Handling | **10** | Concurrency test scripts, negative payload assertions |
-| **CAT-08** | Documentation & Repository Hygiene | **5** | Comprehensive README, setup guides, clean `.gitignore` |
-| **TOTAL** | | **100** | Full compliance baseline |
-
----
-
 ## 📑 Documentation Deliverables
 
 Detailed engineering specifications are available in the [`docs/`](docs/) directory:
 
 - 📄 **[iMovies Master Project Plan (PDF)](docs/iMovies_Project_Plan.pdf)**: Comprehensive 22-page document compiled via headless browser with styled cover page, system diagrams, and task breakdowns.
-- 📝 **[iMovies Project Plan (Markdown)](docs/iMovies_Project_Plan.md)**: Full 18-section architectural specification with trackable checkboxes.
-- 📋 **[iMovies Evaluation Checklist](docs/iMovies_Evaluation_Checklist.md)**: 100-point rubric, security verification checklist, and evaluator sign-off section.
-- 📊 **[iMovies Task Tracker (CSV)](docs/iMovies_Task_Tracker.csv)**: 40 discrete tasks across all 6 project epics.
+- 📝 **[iMovies Project Plan (Markdown)](docs/iMovies_Project_Plan.md)**: Full architectural specification and implementation guide.
 
 ---
 
@@ -424,5 +401,5 @@ Detailed engineering specifications are available in the [`docs/`](docs/) direct
 
 This project is licensed under the **MIT License**.
 
-Developed for academic and enterprise evaluation under the **iMovies** initiative.
+Developed under the **iMovies** initiative.
 Architected and designed with the **Ticketnew Light** design language.

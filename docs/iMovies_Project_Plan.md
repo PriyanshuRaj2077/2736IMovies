@@ -22,10 +22,10 @@
 10. [Comprehensive Testing Strategy & Test Matrices](#10-comprehensive-testing-strategy--test-matrices)
 11. [Phased Implementation Roadmap & Dependency Matrix](#11-phased-implementation-roadmap--dependency-matrix)
 12. [Prioritization, Scope Control & MVP Definition](#12-prioritization-scope-control--mvp-definition)
-13. [Project Evaluation Rubric & Quality Assurance Standards](#13-project-evaluation-rubric--quality-assurance-standards)
+13. [Quality Assurance Standards & Benchmarks](#13-quality-assurance-standards--benchmarks)
 14. [Comprehensive Risk Register](#14-comprehensive-risk-register)
 15. [Operational Setup, Environment Configuration & Repository Hygiene](#15-operational-setup-environment-configuration--repository-hygiene)
-16. [Trackable Task Tracker Checklist](#16-trackable-task-tracker-checklist)
+16. [Implementation Task Checklist](#16-implementation-task-checklist)
 17. [Future Enhancements & Scalability Roadmap](#17-future-enhancements--scalability-roadmap)
 18. [Glossary & Architectural Assumptions](#18-glossary--architectural-assumptions)
 
@@ -34,7 +34,7 @@
 ## 1. Executive Summary & Role Specification
 
 ### 1.1 Engineering Mandate
-This master plan acts as the definitive technical specification, architectural blueprint, and project roadmap for **iMovies — Online Movie Ticket Booking Platform**. Acting in the capacity of a Senior Full-Stack Software Engineer, Software Architect, Technical Project Manager, and Code Reviewer, this document provides an exhaustive, unambiguous plan for the end-to-end development, verification, security hardening, and academic/enterprise evaluation of the platform.
+This master plan acts as the definitive technical specification, architectural blueprint, and project roadmap for **iMovies — Online Movie Ticket Booking Platform**. Acting in the capacity of a Senior Full-Stack Software Engineer, Software Architect, Technical Project Manager, and Code Reviewer, this document provides an exhaustive, unambiguous plan for the end-to-end development, verification, security hardening, and production readiness of the platform.
 
 ### 1.2 Core Guiding Principles
 1. **Zero Assumption / Evidence-Based Auditing**: No code or component is marked as functional without verified, demonstrable evidence.
@@ -52,7 +52,7 @@ iMovies is an enterprise-grade web application engineered to streamline the cine
 ### 2.2 Key Stakeholders & Personas
 - **The Moviegoer (Customer / User)**: Discovers current and upcoming films, filters by genre and date, selects preferred seating tiers (Lower, Middle, Balcony), completes bookings, receives verifiable tickets, manages favorites, and publishes ratings/reviews.
 - **The Cinema Administrator (Admin)**: Manages movie master data, configures theatres and hall capacities/pricing, schedules shows with collision detection, monitors booking volume, and moderates user feedback.
-- **The System Evaluator / Auditor**: Inspects the platform for architectural integrity, database normalization, concurrency safeguards against double-booking, and compliance with industry security standards.
+- **The System Auditor / Reviewer**: Inspects the platform for architectural integrity, database normalization, concurrency safeguards against double-booking, and compliance with industry security standards.
 
 ---
 
@@ -541,7 +541,7 @@ graph TD
 
 #### Phase 0: Repository Audit & Requirements Baseline (Completed)
 - **Objective**: Conduct exhaustive audit of workspace, identify gaps, and publish architectural blueprints.
-- **Deliverables**: `docs/iMovies_Project_Plan.md`, `docs/iMovies_Evaluation_Checklist.md`, `docs/iMovies_Task_Tracker.csv`, `docs/iMovies_Project_Plan.pdf`.
+- **Deliverables**: `docs/iMovies_Project_Plan.md`, `docs/iMovies_Project_Plan.pdf`.
 
 #### Phase 1: Environment & Server Foundation (Effort: 4-6 Hours)
 - **Tasks**: `ENV-01`, `ENV-02`, `ENV-03`.
@@ -588,9 +588,9 @@ graph TD
 - **Deliverables**: Jest test suites, automated double-booking concurrency test, security audit report.
 - **Dependencies**: Phase 8.
 
-#### Phase 10: Deployment, Documentation & Evaluation (Effort: 4-6 Hours)
+#### Phase 10: Deployment & Documentation (Effort: 4-6 Hours)
 - **Tasks**: `DEP-01`.
-- **Deliverables**: Production build, Dockerfile/compose configuration, final evaluation audit walkthrough.
+- **Deliverables**: Production build, Dockerfile/compose configuration, final audit walkthrough.
 - **Dependencies**: Phase 9.
 
 ---
@@ -620,19 +620,17 @@ graph TD
 
 ---
 
-## 13. Project Evaluation Rubric & Quality Assurance Standards
+## 13. Quality Assurance Standards & Benchmarks
 
-### 13.1 Scoring Distribution (100 Points Total)
-- **Functional Correctness & Completeness**: 20 Points
-- **Backend Architecture & Code Quality**: 15 Points
-- **Database Design, Relationships & Data Integrity**: 15 Points
-- **Authentication, Authorization & Security**: 15 Points
-- **Booking Concurrency & Seat Integrity**: 10 Points
-- **Frontend Usability, Aesthetics & Responsiveness**: 10 Points
-- **Automated Testing & Error Handling**: 10 Points
-- **Documentation, Deployment & Repository Hygiene**: 5 Points
-
-*(Refer to `docs/iMovies_Evaluation_Checklist.md` for the line-item grading sheet and measurable evidence criteria).*
+### 13.1 Quality Assurance Core Pillars
+- **Functional Correctness & Completeness**: Comprehensive end-to-end booking flow, search, filtering, and ticket receipt.
+- **Backend Architecture & Code Quality**: Separation of concerns, centralized error handling, and clean REST routes.
+- **Database Design, Relationships & Data Integrity**: Canonical ObjectId refs, compound unique indexes, and schema validation.
+- **Authentication, Authorization & Security**: Bcrypt hashing ($\ge 10$ salt rounds), JWT validation, and RBAC admin guards.
+- **Booking Concurrency & Seat Integrity**: Zero double-booking guarantee via atomic conditional database updates.
+- **Frontend Usability, Aesthetics & Responsiveness**: Ticketnew Light design system, responsive layouts, and dynamic feedback.
+- **Automated Testing & Error Handling**: Concurrency stress testing, negative payload assertions, and graceful failure modes.
+- **Documentation & Repository Hygiene**: Clean repository structure, setup guides, and comprehensive API documentation.
 
 ---
 
@@ -710,7 +708,7 @@ npm run dev
 
 ---
 
-## 16. Trackable Task Tracker Checklist
+## 16. Implementation Task Checklist
 
 Use these trackable markdown checkboxes to monitor progress throughout the development lifecycle:
 
@@ -775,7 +773,7 @@ Use these trackable markdown checkboxes to monitor progress throughout the devel
 - [ ] **QA-03**: Conduct security audit (vulnerabilities, CORS, rate limiting, injection).
 
 ### Phase 10: Deployment & Handover
-- [ ] **DEP-01**: Verify production build, Docker setup, and complete final evaluation checklist.
+- [ ] **DEP-01**: Verify production build, Docker setup, and complete final verification checklist.
 
 ---
 

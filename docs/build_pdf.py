@@ -230,7 +230,7 @@ cover_html = """
 <div class="cover-page">
     <div class="cover-badge">Enterprise Engineering Blueprint</div>
     <div class="cover-title">iMovies — Online Movie Ticket Booking Platform</div>
-    <div class="cover-subtitle">Comprehensive Project Audit, Architecture Specification, Phased Implementation Roadmap & Quality Evaluation Document</div>
+    <div class="cover-subtitle">Comprehensive Project Audit, Architecture Specification, Phased Implementation Roadmap & Engineering Blueprint</div>
     
     <table class="cover-meta-table">
         <tr>
@@ -259,7 +259,7 @@ cover_html = """
         </tr>
         <tr>
             <td>Approval Status</td>
-            <td>Approved for Implementation & Evaluation</td>
+            <td>Approved for Implementation & Production</td>
         </tr>
         <tr>
             <td>Publication Date</td>

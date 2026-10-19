@@ -223,7 +223,7 @@ hr {
 <div class="cover-page">
     <div class="cover-badge">Enterprise Engineering Blueprint</div>
     <div class="cover-title">iMovies — Online Movie Ticket Booking Platform</div>
-    <div class="cover-subtitle">Comprehensive Project Audit, Architecture Specification, Phased Implementation Roadmap & Quality Evaluation Document</div>
+    <div class="cover-subtitle">Comprehensive Project Audit, Architecture Specification, Phased Implementation Roadmap & Engineering Blueprint</div>
     
     <table class="cover-meta-table">
         <tr>
@@ -252,7 +252,7 @@ hr {
         </tr>
         <tr>
             <td>Approval Status</td>
-            <td>Approved for Implementation & Evaluation</td>
+            <td>Approved for Implementation & Production</td>
         </tr>
         <tr>
             <td>Publication Date</td>
@@ -284,17 +284,17 @@ hr {
 <li><a href="#10-comprehensive-testing-strategy--test-matrices">Comprehensive Testing Strategy &amp; Test Matrices</a></li>
 <li><a href="#11-phased-implementation-roadmap--dependency-matrix">Phased Implementation Roadmap &amp; Dependency Matrix</a></li>
 <li><a href="#12-prioritization-scope-control--mvp-definition">Prioritization, Scope Control &amp; MVP Definition</a></li>
-<li><a href="#13-project-evaluation-rubric--quality-assurance-standards">Project Evaluation Rubric &amp; Quality Assurance Standards</a></li>
+<li><a href="#13-quality-assurance-standards--benchmarks">Quality Assurance Standards &amp; Benchmarks</a></li>
 <li><a href="#14-comprehensive-risk-register">Comprehensive Risk Register</a></li>
 <li><a href="#15-operational-setup-environment-configuration--repository-hygiene">Operational Setup, Environment Configuration &amp; Repository Hygiene</a></li>
-<li><a href="#16-trackable-task-tracker-checklist">Trackable Task Tracker Checklist</a></li>
+<li><a href="#16-implementation-task-checklist">Implementation Task Checklist</a></li>
 <li><a href="#17-future-enhancements--scalability-roadmap">Future Enhancements &amp; Scalability Roadmap</a></li>
 <li><a href="#18-glossary--architectural-assumptions">Glossary &amp; Architectural Assumptions</a></li>
 </ol>
 <hr />
 <h2 id="1-executive-summary-role-specification">1. Executive Summary &amp; Role Specification</h2>
 <h3 id="11-engineering-mandate">1.1 Engineering Mandate</h3>
-<p>This master plan acts as the definitive technical specification, architectural blueprint, and project roadmap for <strong>iMovies — Online Movie Ticket Booking Platform</strong>. Acting in the capacity of a Senior Full-Stack Software Engineer, Software Architect, Technical Project Manager, and Code Reviewer, this document provides an exhaustive, unambiguous plan for the end-to-end development, verification, security hardening, and academic/enterprise evaluation of the platform.</p>
+<p>This master plan acts as the definitive technical specification, architectural blueprint, and project roadmap for <strong>iMovies — Online Movie Ticket Booking Platform</strong>. Acting in the capacity of a Senior Full-Stack Software Engineer, Software Architect, Technical Project Manager, and Code Reviewer, this document provides an exhaustive, unambiguous plan for the end-to-end development, verification, security hardening, and production readiness of the platform.</p>
 <h3 id="12-core-guiding-principles">1.2 Core Guiding Principles</h3>
 <ol>
 <li><strong>Zero Assumption / Evidence-Based Auditing</strong>: No code or component is marked as functional without verified, demonstrable evidence.</li>
@@ -310,7 +310,7 @@ hr {
 <ul>
 <li><strong>The Moviegoer (Customer / User)</strong>: Discovers current and upcoming films, filters by genre and date, selects preferred seating tiers (Lower, Middle, Balcony), completes bookings, receives verifiable tickets, manages favorites, and publishes ratings/reviews.</li>
 <li><strong>The Cinema Administrator (Admin)</strong>: Manages movie master data, configures theatres and hall capacities/pricing, schedules shows with collision detection, monitors booking volume, and moderates user feedback.</li>
-<li><strong>The System Evaluator / Auditor</strong>: Inspects the platform for architectural integrity, database normalization, concurrency safeguards against double-booking, and compliance with industry security standards.</li>
+<li><strong>The System Auditor / Reviewer</strong>: Inspects the platform for architectural integrity, database normalization, concurrency safeguards against double-booking, and compliance with industry security standards.</li>
 </ul>
 <hr />
 <h2 id="3-technology-stack-rationale-standards">3. Technology Stack Rationale &amp; Standards</h2>
@@ -1226,7 +1226,7 @@ const booking = await Booking.create({
 <h4 id="phase-0-repository-audit-requirements-baseline-completed">Phase 0: Repository Audit &amp; Requirements Baseline (Completed)</h4>
 <ul>
 <li><strong>Objective</strong>: Conduct exhaustive audit of workspace, identify gaps, and publish architectural blueprints.</li>
-<li><strong>Deliverables</strong>: <code>docs/iMovies_Project_Plan.md</code>, <code>docs/iMovies_Evaluation_Checklist.md</code>, <code>docs/iMovies_Task_Tracker.csv</code>, <code>docs/iMovies_Project_Plan.pdf</code>.</li>
+<li><strong>Deliverables</strong>: <code>docs/iMovies_Project_Plan.md</code>, <code>docs/iMovies_Project_Plan.pdf</code>.</li>
 </ul>
 <h4 id="phase-1-environment-server-foundation-effort-4-6-hours">Phase 1: Environment &amp; Server Foundation (Effort: 4-6 Hours)</h4>
 <ul>
@@ -1282,10 +1282,10 @@ const booking = await Booking.create({
 <li><strong>Deliverables</strong>: Jest test suites, automated double-booking concurrency test, security audit report.</li>
 <li><strong>Dependencies</strong>: Phase 8.</li>
 </ul>
-<h4 id="phase-10-deployment-documentation-evaluation-effort-4-6-hours">Phase 10: Deployment, Documentation &amp; Evaluation (Effort: 4-6 Hours)</h4>
+<h4 id="phase-10-deployment-documentation-effort-4-6-hours">Phase 10: Deployment &amp; Documentation (Effort: 4-6 Hours)</h4>
 <ul>
 <li><strong>Tasks</strong>: <code>DEP-01</code>.</li>
-<li><strong>Deliverables</strong>: Production build, Dockerfile/compose configuration, final evaluation audit walkthrough.</li>
+<li><strong>Deliverables</strong>: Production build, Dockerfile/compose configuration, final audit walkthrough.</li>
 <li><strong>Dependencies</strong>: Phase 9.</li>
 </ul>
 <hr />
@@ -1313,19 +1313,18 @@ const booking = await Booking.create({
 <li>Microservices decoupling, Redis caching layer, multi-cinema chain SaaS tenancy.</li>
 </ul>
 <hr />
-<h2 id="13-project-evaluation-rubric-quality-assurance-standards">13. Project Evaluation Rubric &amp; Quality Assurance Standards</h2>
-<h3 id="131-scoring-distribution-100-points-total">13.1 Scoring Distribution (100 Points Total)</h3>
+<h2 id="13-quality-assurance-standards-benchmarks">13. Quality Assurance Standards &amp; Benchmarks</h2>
+<h3 id="131-quality-assurance-core-pillars">13.1 Quality Assurance Core Pillars</h3>
 <ul>
-<li><strong>Functional Correctness &amp; Completeness</strong>: 20 Points</li>
-<li><strong>Backend Architecture &amp; Code Quality</strong>: 15 Points</li>
-<li><strong>Database Design, Relationships &amp; Data Integrity</strong>: 15 Points</li>
-<li><strong>Authentication, Authorization &amp; Security</strong>: 15 Points</li>
-<li><strong>Booking Concurrency &amp; Seat Integrity</strong>: 10 Points</li>
-<li><strong>Frontend Usability, Aesthetics &amp; Responsiveness</strong>: 10 Points</li>
-<li><strong>Automated Testing &amp; Error Handling</strong>: 10 Points</li>
-<li><strong>Documentation, Deployment &amp; Repository Hygiene</strong>: 5 Points</li>
+<li><strong>Functional Correctness &amp; Completeness</strong>: Comprehensive end-to-end booking flow, search, filtering, and ticket receipt.</li>
+<li><strong>Backend Architecture &amp; Code Quality</strong>: Separation of concerns, centralized error handling, and clean REST routes.</li>
+<li><strong>Database Design, Relationships &amp; Data Integrity</strong>: Canonical ObjectId refs, compound unique indexes, and schema validation.</li>
+<li><strong>Authentication, Authorization &amp; Security</strong>: Bcrypt hashing ($\ge 10$ salt rounds), JWT validation, and RBAC admin guards.</li>
+<li><strong>Booking Concurrency &amp; Seat Integrity</strong>: Zero double-booking guarantee via atomic conditional database updates.</li>
+<li><strong>Frontend Usability, Aesthetics &amp; Responsiveness</strong>: Ticketnew Light design system, responsive layouts, and dynamic feedback.</li>
+<li><strong>Automated Testing &amp; Error Handling</strong>: Concurrency stress testing, negative payload assertions, and graceful failure modes.</li>
+<li><strong>Documentation &amp; Repository Hygiene</strong>: Clean repository structure, setup guides, and comprehensive API documentation.</li>
 </ul>
-<p><em>(Refer to <code>docs/iMovies_Evaluation_Checklist.md</code> for the line-item grading sheet and measurable evidence criteria).</em></p>
 <hr />
 <h2 id="14-comprehensive-risk-register">14. Comprehensive Risk Register</h2>
 <table>
@@ -1468,7 +1467,7 @@ npm run dev
 # Open application in browser: http://localhost:5173
 </code></pre>
 <hr />
-<h2 id="16-trackable-task-tracker-checklist">16. Trackable Task Tracker Checklist</h2>
+<h2 id="16-implementation-task-checklist">16. Implementation Task Checklist</h2>
 <p>Use these trackable markdown checkboxes to monitor progress throughout the development lifecycle:</p>
 <h3 id="phase-1-environment-project-setup">Phase 1: Environment &amp; Project Setup</h3>
 <ul>
@@ -1541,7 +1540,7 @@ npm run dev
 </ul>
 <h3 id="phase-10-deployment-handover">Phase 10: Deployment &amp; Handover</h3>
 <ul>
-<li>[ ] <strong>DEP-01</strong>: Verify production build, Docker setup, and complete final evaluation checklist.</li>
+<li>[ ] <strong>DEP-01</strong>: Verify production build, Docker setup, and complete final verification checklist.</li>
 </ul>
 <hr />
 <h2 id="17-future-enhancements-scalability-roadmap">17. Future Enhancements &amp; Scalability Roadmap</h2>
